@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { EncabezadoComponent } from './components/encabezado/encabezado.component';
+import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    EncabezadoComponent,
+    InicioSesionComponent
   ],
   imports: [
     BrowserModule,
