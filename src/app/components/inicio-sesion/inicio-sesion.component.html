@@ -1,1 +1,18 @@
-<p>inicio-sesion works!</p>
+<div class="back-inicio pt-3" >
+
+    <div class="d-flex estructura" >
+        <img class="pb-3 size-logo" src="../../../assets/images/LogoFinal.svg" alt="">
+        <h2 class="text-white">Iniciar sesión</h2>
+        <img src="../../../assets/images/inicioSesionClientes.svg" alt="">
+        <input class="form-control mt-4 input-inicio" type="text" placeholder="Correo" aria-label="default input example">
+        <input class="form-control mt-3 input-inicio" type="text" placeholder="Contraseña" aria-label="default input example">
+        <button type="button"  (click)="iniciarSesion()" class="btn btn-primary mt-3 boton-inicio-sesion">Acceder</button>
+
+        <div (click)="registrarse()" class="text-registrarse mt-3">
+            <span class="text-white" >¿No tienes cuenta?</span>
+            <span class="text-blue"> Regístrate ahora</span>
+        </div>
+        
+        
+    </div>
+</div>

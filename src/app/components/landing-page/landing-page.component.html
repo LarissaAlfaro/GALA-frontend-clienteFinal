@@ -10,7 +10,7 @@
                 <img src="../../../assets/images/iconos.svg" id="iconos">
             </div>
             <div class="col-4" >
-                <img id="menu-navbar" src="../../../assets/images/MenuNavbar.svg">
+                <img id="menu-navbar" (click)="abrirModal(modalOpcionesMenu)" src="../../../assets/images/MenuNavbar.svg">
             </div>
             <img src="../../../assets/images/niño-gala.svg" id="niño-gala-seccion1">
         </div>
@@ -40,11 +40,11 @@
                     <div class="container-fluid">
                         <div class="row">
                             <p style="padding-top: 20px;" class="texto-seccion4">¿Ya tienes una cuenta?</p>
-                            <button type="button" class="btn btn-primary botones-seccion4">Inicia Sesión</button>
+                            <button type="button" (click)="verInicioSesion()" class="btn btn-primary botones-seccion4">Inicia Sesión</button>
                         </div>
                         <div class="row">
                             <p style="padding-top: 25px;" class="texto-seccion4">O si no crea una</p>
-                            <button type="button" class="btn btn-primary botones-seccion4">Regístrate</button>
+                            <button type="button" (click)="verRegistroClientes()" class="btn btn-primary botones-seccion4">Regístrate</button>
                         </div>
                     </div>
                 </div>
@@ -155,6 +155,54 @@
 <div id="seccion8">
     <img style="width:100vw" src="../../../assets/images/Footer-LP.svg">
 </div>
+
+
+<ng-template #modalOpcionesMenu let-modal>
+    <div class="modal-body" style="height:100vh!important; width:100vw!important; background-color: #D3E3FC;">
+        <img class="close-modal" (click)="modal.dismiss('Cross click')" src="../../../assets/images/xmark-solid.svg">
+      
+        <button id="boton-iniciar-sesion" type="button" (click)="abrirModal(modalOpcionesInicio)" class="botones-opciones-modal btn btn-primary "><img id="icono-inicio-sesion" src="../../../assets/images/login_black_24dp 1.svg">Iniciar Sesión</button>  
+        <button  id="boton-registrarse" type="button" (click)="abrirModal(modalOpcionesRegistro)" class="botones-opciones-modal btn btn-primary"><img id="icono-inicio-sesion" src="../../../assets/images/how_to_reg_black_24dp 1.svg">Registrarse</button>
+    </div>
+  </ng-template>
+
+
+  <ng-template #modalOpcionesInicio let-modal>
+    <div class="modal-body contenedor-botones">
+        <img class="close-modal" style="margin-left: 90%; height: 25px;
+        width: 25px;" (click)="modal.dismiss('Cross click')" src="../../../assets/images/xmark-solid.svg">
+        <h2 class="titulo-modal">Seleccione tipo de usuario</h2>
+        <div class="contenedor-botones">
+            <div>
+                <button type="button" (click)="verInicioSesion()" class="btn btn-primary botones-seccion4 botones-regis-inicio">Cliente</button>
+            </div>
+            <div>
+                <button type="button" style="margin-bottom: 30px;" class="btn btn-primary botones-seccion4 botones-regis-inicio">Motorista</button>
+            </div>
+        </div>
+    </div>
+  </ng-template>
+
+
+  <ng-template #modalOpcionesRegistro let-modal>
+    <div class="modal-body">
+        <img class="close-modal" style="margin-left: 90%; height: 25px;
+        width: 25px;" (click)="modal.dismiss('Cross click')" src="../../../assets/images/xmark-solid.svg">
+        <h2 class="titulo-modal">Seleccione tipo de usuario</h2>
+
+        <div class="contenedor-botones">
+            <div>
+                <button type="button" (click)="verRegistroClientes()" class="btn btn-primary botones-seccion4 botones-regis-inicio">Cliente</button>
+            </div>
+            <div>
+                <button type="button" style="margin-bottom: 30px;" class="btn btn-primary botones-seccion4 botones-regis-inicio">Motorista</button>
+            </div>
+        </div>
+    </div>
+  </ng-template>
+
+
+
 
 
 

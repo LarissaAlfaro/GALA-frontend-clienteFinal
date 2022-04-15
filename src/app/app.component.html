@@ -1,1 +1,12 @@
-<app-landing-page></app-landing-page>
+<app-encabezado *ngIf="areaVisible != 'registro-clientes' && areaVisible != 'inicio-sesion' && areaVisible != 'landing-page'"></app-encabezado>
+<app-footer *ngIf="areaVisible != 'registro-clientes' && areaVisible != 'inicio-sesion' && areaVisible != 'landing-page'"></app-footer>
+<app-landing-page (onInicioSesion)="verAreaInicioSesion()" (onRegistrarse)="verRegistro()" *ngIf="areaVisible == 'landing-page'" ></app-landing-page>
+<app-inicio-sesion (onIniciarSesion)="verCategorias()" (onRegistrarse)="verRegistro()" *ngIf="areaVisible == 'inicio-sesion'"></app-inicio-sesion>
+<app-registro-clientes (onVerCategorias)="verCategorias()"  *ngIf="areaVisible == 'registro-clientes'"></app-registro-clientes>
+<app-categorias *ngIf="areaVisible == 'seccion-categorias'" (onVerEmpresas)="verEmpresas()"></app-categorias>
+<app-empresas *ngIf="areaVisible == 'seccion-empresas'" (onVerDetalleEmpresa) = "verDetalleEmpresa()"></app-empresas>
+<app-detalle-empresa *ngIf="areaVisible == 'seccion-detalle-empresa'"></app-detalle-empresa>
+
+
+
+

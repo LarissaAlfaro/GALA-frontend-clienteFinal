@@ -1,0 +1,40 @@
+.bg-light{
+    background-color:#77A6F7 !important;
+}
+
+.wh-logo{
+    height: 50px!important;
+}
+
+.foto-perfil{
+    height: 50px;
+}
+
+.brand{
+    height: 30px;  
+}
+
+.this-nav {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.nav-container {
+    width:100%;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+.numero-carrito {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: roboto;
+    position: absolute;
+    bottom: 40px;
+}

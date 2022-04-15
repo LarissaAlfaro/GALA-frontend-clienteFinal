@@ -1,0 +1,48 @@
+.titulo-categorias {
+    position: absolute;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #77A6F7;
+    margin-left: 6%;
+}
+
+
+.my-cards {
+    width: 100%!important;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+
+.letras-cards {  
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #00887A;
+}
+
+.my-card-body {
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.iconos-cards {
+    align-self: center;
+    height: 55px;
+    width: 55px;
+}

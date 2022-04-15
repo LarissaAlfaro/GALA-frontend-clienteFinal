@@ -1,0 +1,36 @@
+/*Cambios en foot*/
+.foot {
+    position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   z-index: 5;
+}
+
+.back-foot {
+    background-image: url(../../../assets/images/foot.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 30px;
+    justify-content: space-around;
+}
+
+.icons {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.back-icon {
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.rounded-circle-pink {
+    background-color: #FFCCBC;
+}
+
+.rounded-circle:hover {
+    background-color: #FFCCBC; 
+}
+

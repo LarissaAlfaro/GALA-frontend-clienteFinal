@@ -1,0 +1,80 @@
+<div class="back-registro" style="height: 1200px;">
+    <div class="d-flex estructura" >
+        <img class="pb-2 size-logo" src="../../../assets/images/LogoFinal.svg" alt="">
+        <h2 class="text-white" style="margin: 0%;"> Registro </h2>
+        <span style="color: white;"> Clientes </span>
+        <div class="text-center mt-2" style="font-size: 13px;">
+            <span style="color: white; margin: 0;"> Empieza a hacer tus <br> pedidos con nosotros</span>    
+        </div>
+        
+        <div id="inputs-area" class="margen">
+            <form [formGroup]="formularioRegistro">
+
+                <div class="mb-2">
+                    <span class="text-inputs">Nombre <span style="color: red;">*</span></span>
+                    <input formControlName="nombre" class="form-control  input-registro" type="text" required placeholder="Escribe aquí..." aria-label="default input example">
+                    <span class="row msj-error" *ngIf="nombre?.invalid && (nombre?.dirty || nombre?.touched)">El campo es obligatorio</span>
+                    <span class="row msj-exito" *ngIf="!nombre?.invalid ">Válido</span>
+                </div>
+
+                <div class="mb-2">
+                    <span class="text-inputs">Apellido <span style="color: red;">*</span></span>
+                    <input formControlName="apellido" class="form-control mb-2 input-registro" type="text" required placeholder="Escribe aquí..." aria-label="default input example">
+                    <span class="row msj-error" *ngIf="apellido?.invalid && (apellido?.dirty || apellido?.touched)">El campo es obligatorio</span>
+                    <span class="row msj-exito" *ngIf="!apellido?.invalid ">Válido</span>
+                </div>
+
+                <div class="mb-2">
+                    <span class="text-inputs">Fecha  de nacimiento <span style="color: red;">*</span></span>
+                    <input formControlName="nacimiento" class="form-control mb-2 input-registro"  type="date" min="1870-01-01" >
+                    <span class="row msj-error" *ngIf="nacimiento?.invalid && (nacimiento?.dirty || nacimiento?.touched)">El campo es obligatorio</span>
+                    <span class="row msj-exito" *ngIf="!nacimiento?.invalid ">Válido</span>
+                </div>
+                
+                <div class="mb-2">
+                    <span class="text-inputs">Correo <span style="color: red;">*</span></span>
+                    <input formControlName="correo" class="form-control mb-2 input-registro" type="text" required placeholder="Escribe aquí..." aria-label="default input example">
+                    <span class="row msj-error" *ngIf="correo?.invalid && (correo?.dirty || correo?.touched)">El campo es obligatorio</span>
+                    <span class="row msj-exito" *ngIf="!correo?.invalid ">Válido</span>
+                </div>
+                
+                <div class="mb-2">
+                    <span class="text-inputs">Contraseña <span style="color: red;">*</span></span>
+                    <input formControlName="contrasenia" class="form-control mb-2 input-registro" type="password" required placeholder="Escribe aquí..." aria-label="default input example">
+                    <span class="row msj-error" *ngIf="!(contrasenia?.dirty || contrasenia?.touched)">El campo es obligatorio</span>
+                    <span class="row msj-error" *ngIf="contrasenia?.invalid &&(contrasenia?.dirty || contrasenia?.touched)">La contraseña no es válida.<br> Deben ser mínimo 8 caracteres.<br> Se debe incluir letras minúsculas, mayúsculas, y letras.</span>
+                    <span class="row msj-exito" *ngIf="!contrasenia?.invalid ">Válido</span>
+                    
+                </div>
+                
+                <div class="mb-2">
+                    <span class="text-inputs">Confirmar contraseña <span style="color: red;">*</span></span>
+                    <input formControlName="confirmContrasenia" class="form-control mb-2 input-registro" type="password" required placeholder="Escribe aquí..." aria-label="default input example">
+                    <span class="row msj-error" *ngIf="confirmContrasenia?.invalid && (confirmContrasenia?.dirty || confirmContrasenia?.touched)">El campo es obligatorio</span>
+                    <span class="row msj-error" *ngIf="contrasenia?.valid && (contrasenia?.value != confirmContrasenia?.value)" >Las contraseñas no son iguales</span>
+                </div>  
+                
+               
+                <button [disabled]="formularioRegistro.invalid || !(contrasenia?.value === confirmContrasenia?.value)" type="button " (click)="onSubmitFormulario(); abrirModal(modalRegistroExitoso)" class="btn btn-primary mt-3 mb-2" >Regístrate</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<ng-template #modalRegistroExitoso let-modal>
+    <div class="modal-body">
+        <img class="close-modal" style="margin-left: 90%; height: 25px;
+        width: 25px;" (click)="modal.dismiss('Cross click')" src="../../../assets/images/xmark-solid.svg">
+        <img class="" style="margin-left: 40%;" src="../../../assets/images/check_circle_black_24dp 1.svg">
+        <h2 class="titulo-modal">Se ha registrado exitosamente.</h2>
+        <div class="contenedor-botones">
+        <button  id="boton-aceptar" (click)="verCategorias()" type="button" class="btn btn-primary" >Aceptar</button>
+         
+
+        </div>
+    
+    </div>
+  </ng-template>
+

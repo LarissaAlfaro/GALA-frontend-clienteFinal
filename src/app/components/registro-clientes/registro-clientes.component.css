@@ -1,0 +1,109 @@
+.back-registro{
+    background-image: url(../../../assets/images/back-registro.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: space-around;
+}
+
+.text-white{
+    color: white; 
+    font-weight: bold;
+}
+
+
+.btn-primary:focus {
+    color: #fff;
+    background-color: #77A6F7;
+    border-color: #77A6F7;
+    box-shadow: 0 0 0 0.15rem white;
+}
+
+.btn-primary{
+    border-color: #77A6F7;
+}
+
+.estructura{
+    flex-direction: column; 
+    align-items: center; 
+    height: 600px;
+}
+
+.input-registro{
+    width: 300px;
+    border-radius: 30px;
+    padding-left: 20px;
+}
+
+.btn-primary{
+    border-radius: 30px;
+    width: 300px;
+    background-color: #00887A;
+    border-color: #00887A;
+}
+
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #77A6F7;
+    outline: 0;
+    box-shadow: 0 0 0 0.15rem #77A6F7;
+}
+
+.size-logo{
+    padding-top: 13px;
+    height: 70px;
+}
+
+.margen{
+    margin-top: 230px;
+}
+
+.input-registro-date{
+    width: 300px;
+    padding: 19px;
+    border-radius: 30px;
+}
+
+.text-inputs{
+    color: #00887A;
+    padding-left: 4px;
+}
+
+.file{
+    background-color: #A4C3F0;
+}
+
+.msj-error{
+    color: red;
+    margin-left: 5px;
+    font-size: x-small;
+}
+
+.msj-exito{
+    color: #005eff;
+    margin-left: 5px;
+    font-size: x-small;
+}
+
+.titulo-modal {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14.5px;
+    line-height: 15px;
+    text-align: center;
+    color: #000000;
+    margin-top: 20px;
+}
+
+#boton-aceptar {
+    background-color: #00887A;
+    margin-left: 33%;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    width: 35%;
+}
+
+
+
