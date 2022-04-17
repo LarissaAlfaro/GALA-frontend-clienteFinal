@@ -7,10 +7,10 @@ import { faHouse, faUserLarge, faBagShopping, faCartShopping } from '@fortawesom
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-  @Output() onVerOrdenesEntregadas= new EventEmitter(); 
-  @Output()  onVerOrdenesPendientes= new EventEmitter(); 
+  @Output() onVerCategorias= new EventEmitter(); 
+  @Output()  onVerCompras= new EventEmitter(); 
   @Output()  onVerPerfil= new EventEmitter(); 
-  @Output()  onVerOrdenesRecientes= new EventEmitter(); 
+  @Output()  onVerCarrito= new EventEmitter(); 
   faHouse = faHouse;
   faUserLarge = faUserLarge;
   faBagShopping = faBagShopping;
@@ -27,22 +27,22 @@ export class FooterComponent implements OnInit {
     if (this.status == true) {
       this.status = false;
     }
-    this.onVerOrdenesEntregadas.emit();
+    this.onVerCarrito.emit();
   }
 
   verAreaCompras(){
     if (this.status == true) {
       this.status = false;
     }
-    this.onVerOrdenesPendientes.emit();
+    this.onVerCompras.emit();
   }
 
   verAreaCategorias(){
-    this.onVerOrdenesRecientes.emit();
+    this.onVerCategorias.emit();
     this.status = !this.status;
   }
 
-  verPerfil(){
+  verAreaPerfil(){
     if (this.status == true) {
       this.status = false;
     }

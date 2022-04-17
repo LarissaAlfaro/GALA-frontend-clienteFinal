@@ -6,34 +6,41 @@ margin-left: auto; margin-right: auto; margin-bottom: 70px;">
            <p class="categoria-atras">Hogar</p>
        </div>
    </div>
-   <div class="row" style="">
-    <div class="scrolling-wrapper ::-webkit-scrollbar">
-        <div class="scrolling-wrapper-fexbox card cards-nav" style=" border: 1px solid rgba(0,0,0,0)"><h2 class="cards-nav-letra">Diunsa</h2></div>
-        <div class="scrolling-wrapper-fexbox card cards-nav" style=" border: 1px solid rgba(0,0,0,0)"><h2 class="cards-nav-letra">Elektra</h2></div>
-        <div class="scrolling-wrapper-fexbox card cards-nav" style=" border: 1px solid rgba(0,0,0,0)"><h2 class="cards-nav-letra">Amazon</h2></div>
-        <div class="scrolling-wrapper-fexbox card cards-nav" style=" border: 1px solid rgba(0,0,0,0)"><h2 class="cards-nav-letra">PricesSmart</h2></div>
-        <div class="scrolling-wrapper-fexbox card cards-nav" style=" border: 1px solid rgba(0,0,0,0)"><h2 class="cards-nav-letra">PricesSmart</h2></div>
-        <div class="scrolling-wrapper-fexbox card cards-nav" style=" border: 1px solid rgba(0,0,0,0)"><h2 class="cards-nav-letra">PricesSmart</h2></div>
+   <div class="row">
+        <div class="scrolling-wrapper ::-webkit-scrollbar">
+            <div class="scrolling-wrapper-fexbox card cards-nav" style=" border: 1px solid rgba(0,0,0,0)"><h2 class="cards-nav-letra">Diunsa</h2></div>
+            <div class="scrolling-wrapper-fexbox card cards-nav" style=" border: 1px solid rgba(0,0,0,0)"><h2 class="cards-nav-letra">Elektra</h2></div>
+            <div class="scrolling-wrapper-fexbox card cards-nav" style=" border: 1px solid rgba(0,0,0,0)"><h2 class="cards-nav-letra">Amazon</h2></div>
+            <div class="scrolling-wrapper-fexbox card cards-nav" style=" border: 1px solid rgba(0,0,0,0)"><h2 class="cards-nav-letra">PricesSmart</h2></div>
+            <div class="scrolling-wrapper-fexbox card cards-nav" style=" border: 1px solid rgba(0,0,0,0)"><h2 class="cards-nav-letra">PricesSmart</h2></div>
+            <div class="scrolling-wrapper-fexbox card cards-nav" style=" border: 1px solid rgba(0,0,0,0)"><h2 class="cards-nav-letra">PricesSmart</h2></div>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="col">
-        <div class="card detalle-empresa">
-            <div class="card-body cuerpo-card">
-            <img src="../../../assets/images/empresa4.svg" class="card-img-top" alt="...">
-              <div class="calificacion">
-                    <img src="../../../assets/images/est-llena.svg">
-                    <img src="../../../assets/images/est-llena.svg">
-                    <img src="../../../assets/images/est-mitad.svg">
-                    <img src="../../../assets/images/est-vacia.svg">
-                    <img src="../../../assets/images/est-vacia.svg">
-              </div>
-              <p class="texto-card-empresa">Hogar, electrodomésticos y mucho <br>más...</p>
-              <div>
-                <button class="boton-ver-productos">Ver Productos</button>
-              </div>
+    <div class="row">
+        <div class="col">
+            <div class="card detalle-empresa">
+                <div class="card-body cuerpo-card">
+                    <img src="../../../assets/images/empresa4.svg" class="card-img-top imagenes-empresas" alt="...">
+                    <div class="calificacion">
+                            <img src="../../../assets/images/est-llena.svg">
+                            <img src="../../../assets/images/est-llena.svg">
+                            <img src="../../../assets/images/est-mitad.svg">
+                            <img src="../../../assets/images/est-vacia.svg">
+                            <img src="../../../assets/images/est-vacia.svg">
+                    </div>
+                    <p class="texto-card-empresa">Hogar, electrodomésticos y mucho <br>más...</p>
+                    <div class="contenedor-texto">
+                        <fa-icon style="color: rgba(0, 136, 122, 0.4)" class="icons" [icon]="faCircleInfo"></fa-icon><span class=" texto-empresa descripcion-empresa">Vendemos los mejores electrodomésticos y muebles en la ciudad, a los mejores precios.</span>
+                    </div>
+                    <div class="contenedor-texto">
+                        <fa-icon style="color: rgba(0, 136, 122, 0.4)" class="icons" [icon]="faLocationDot"></fa-icon><span class="texto-empresa direccion">Boulevard Juan Pablo, centro comercial Plaza Juan Casco</span>
+                    </div>
+                    <div class="contenedor-texto">   
+                        <fa-icon style="color: rgba(0, 136, 122, 0.4)" class="icons" [icon]="faClock"></fa-icon><span class=" texto-empresa horario">10:00 a.m. - 7:00 p.m.</span>
+                    </div>
+                    <button class="boton-ver-productos" (click)="verProductos();">Ver Productos</button> 
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>

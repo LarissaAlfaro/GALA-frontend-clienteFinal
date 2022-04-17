@@ -1,0 +1,130 @@
+.contenedor-carrito {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    background-color:  #D3E3FC;
+}
+
+.imagen-producto-carrito {
+    border-radius: 20px;
+    width: 100%;
+    height: 76px;
+}
+
+.textos-carrito {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: -0.02em;
+}
+
+.nombre-producto {
+    color: #000000;
+    margin-top: 4%;
+    margin-bottom: 0px;
+}
+
+.texto-establecimiento {
+    color: #77A6F7;
+}
+
+.texto-descripcion {
+    color: #AFA9A9;
+}
+
+.svg-eliminar-producto {
+    margin-left: auto;
+    margin-right: 10%;
+    margin-top: 3%;
+    font-size: 25px;
+    color: #C21975;
+}
+
+.cantidad-producto {
+
+}
+
+.precio {
+    margin-left: auto;  
+    margin-right: 10%;
+}
+
+.signo-menos {
+    color: #C21975;
+    margin-right: 3%;
+}
+
+.signo-mas {
+   color: #77A6F7;
+}
+
+html, body {
+    background-color: #D3E3FC;
+}
+
+.subtotal-carrito {
+
+}
+
+.isv {
+
+}
+
+.comision {
+
+}
+
+.total {
+
+}
+
+.costos {
+    font-family: 'Roboto';
+    font-style: normal;
+    margin-left: 13%;
+    width: 300px;
+    margin-left: auto;
+    font-size: 13px;
+}
+
+.detalles-factura {
+    text-align: end;
+}
+
+.especificaciones {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.horizontal-row {
+    border: 1px solid black;
+    width: 55%;
+    margin-bottom: 10px;
+    margin-right: 7px;
+}
+
+.hr {
+    width: 90%;
+    border: 1px solid  #00887A;
+}
+
+.boton-checkout {
+    background: #00887A;
+    border: 2px solid #00887A;
+    border-radius: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 85%;
+}
+
+.contenedor-boton-checkout {
+    margin-top: 40px;
+    width: 100vw;
+    text-align: center;
+}

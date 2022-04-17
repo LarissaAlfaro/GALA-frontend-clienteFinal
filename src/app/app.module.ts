@@ -17,6 +17,8 @@ import { CommonModule } from '@angular/common';
 import { DetalleEmpresaComponent } from './components/detalle-empresa/detalle-empresa.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
+import { CarritoComponent } from './components/carrito/carrito.component';
+import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,9 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
     CategoriasComponent,
     EmpresasComponent,
     DetalleEmpresaComponent,
-    ProductosComponent
+    ProductosComponent,
+    CarritoComponent,
+    UbicacionComponent
   ],
   imports: [
     BrowserModule,

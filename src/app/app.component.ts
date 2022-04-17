@@ -19,7 +19,6 @@ export class AppComponent {
   }
 
   iniciarSesion() {
-    
   }
 
   verCategorias() {
@@ -32,6 +31,14 @@ export class AppComponent {
 
   verDetalleEmpresa() {
     this.areaVisible = "seccion-detalle-empresa";
+  }
+
+  verProductos() {
+    this.areaVisible = "seccion-productos";
+  }
+
+  verCarrito() {
+    this.areaVisible = "seccion-carrito";
   }
   
 }
