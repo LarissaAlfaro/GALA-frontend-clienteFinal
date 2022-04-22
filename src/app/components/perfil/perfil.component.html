@@ -1,0 +1,42 @@
+
+<div class="back-perfil">
+    <div class="img-perfil">
+        <span class="nombre-usuario mt-2 mb-2">Fátima Martínez</span>
+        <img class="rounded-circle style-foto" src="../.././assets/images/perfilMujer.jpeg" alt=""> 
+        <label class="upload mt-1" for="upload">
+            <span class="glyphicon glyphicon-folder-open text " aria-hidden="true"><fa-icon style="color: #00887A; font-size: larger;" [icon]="faCamera"></fa-icon></span>
+            <input  type="file" id="upload" style="display:none">
+        </label>
+    </div>
+</div>
+
+<div class="d-flex mt-4" style="align-items: center; flex-direction: column;">
+    <div>
+        <fa-icon class="icons" [icon]="faCakeCandles"></fa-icon>
+         <span class="text"> 01 Enero 1990</span>
+    </div>
+    <div class="mt-2">
+        <fa-icon class="icons" [icon]="faEnvelope"></fa-icon>
+         <span class="text"> famartinez@gmail.com</span>
+    </div>
+
+    <button (click)="abrirModalCerrarSesion(modalCerrarSesion)" type="button" class="btn btn-outline-success mt-4"> <fa-icon class="icons" [icon]="faRightFromBracket"></fa-icon> Cerrar sesión</button>
+
+
+</div>
+
+<!-- Modal CerrarSesion -->
+<ng-template #modalCerrarSesion let-modal>
+    <div class="modal-header" style="background-color: #00887A; color:white;">
+        <fa-icon class="me-3" style="color:white; font-size: xx-large;" [icon]="faRightFromBracket"></fa-icon>
+        <h4 class="modal-title" id="modal-basic-title"> Cerrar Sesión</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body text-center">
+        <b>¿Está seguro que desea cerrar sesión?</b>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-primary" (click)="modal.close('')">Cerrar Sesión </button>
+      <button type="button" class="btn btn-outline-primary" (click)="modal.close('')">Cancelar</button>
+    </div>
+</ng-template>

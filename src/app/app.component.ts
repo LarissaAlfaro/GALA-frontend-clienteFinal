@@ -40,5 +40,32 @@ export class AppComponent {
   verCarrito() {
     this.areaVisible = "seccion-carrito";
   }
-  
+
+  verUbicacion() {
+    this.areaVisible = "seccion-ubicacion";
+  }
+
+  verPago() {
+    this.areaVisible = "seccion-pago";
+  }
+
+  atrasUbicacion () {
+    this.areaVisible = "seccion-carrito";
+  }
+
+  atrasPago() {
+    this.areaVisible = "seccion-ubicacion"
+  }
+
+  verCompras() {
+    this.areaVisible = "seccion-compras"; 
+  }
+
+  verDetalleCompra() {
+    this.areaVisible = "detalle-compra";
+  }  
+
+  verPerfil() {
+    this.areaVisible = "seccion-perfil";
+  }
 }

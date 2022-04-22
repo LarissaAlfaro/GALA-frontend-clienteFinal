@@ -42,4 +42,7 @@ export class ProductosComponent implements OnInit {
     );
   }
 
+  cerrarModales() {
+    this.modalService.dismissAll();
+  }
 }

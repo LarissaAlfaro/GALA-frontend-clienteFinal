@@ -1,0 +1,109 @@
+.componente-pago {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    background-image: url(../../../assets/images/ElipseFondo.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+}
+
+.categoria-atras {
+    position: absolute;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -0.02em;
+    color: #77A6F7;
+    margin-top: 27px;
+    margin-left: 40px;
+}
+
+.svg-atras {
+    position: absolute;
+    width: 12px;
+    height: 20px;
+    margin-top: 25px;
+    margin-left: 15px;
+}
+
+.div-icono-tarjeta {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pago-tarjeta {
+    width: 60px;
+}
+
+.titulo-ubicacion {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15.5px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #00887A;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.imagen-marcas-tarjetas {
+    width: 40px;
+}
+
+.marcas-tarjetas {
+    text-align: center;
+}
+
+.text-inputs{
+    color: black;
+    padding-left: 4px;
+    font-weight: 600;;
+}
+
+.input-registro{
+    border-radius: 30px;
+    padding-left: 20px;
+}
+
+.msj-error{
+    color: red;
+    margin-left: 5px;
+    font-size: x-small;
+}
+
+.inputsDatosTarjeta {
+    margin-top: 30px;
+}
+
+.individualInputs {
+    margin-top: 15px!important;
+    width: 100%;
+}
+
+.formularioPagoTarjeta {
+    padding-right: 8%;
+    padding-left: 8%;
+}
+
+.boton-finalizar {
+    background: #00887A;
+    border: 2px solid #00887A;
+    border-radius: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 40%;
+}
+
+.div-boton {
+    margin-top: 20px;
+    text-align: right;
+}
+

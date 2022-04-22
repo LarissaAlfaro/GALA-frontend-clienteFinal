@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import {faCircleMinus} from '@fortawesome/free-solid-svg-icons'
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
@@ -9,6 +9,7 @@ import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./carrito.component.css']
 })
 export class CarritoComponent implements OnInit {
+  @Output() onCheckout = new EventEmitter();
   faXmark = faXmark;
   faCircleMinus = faCircleMinus;
   faCirclePlus = faCirclePlus;
@@ -16,6 +17,10 @@ export class CarritoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  checkout() {
+    this.onCheckout.emit();
   }
 
 }

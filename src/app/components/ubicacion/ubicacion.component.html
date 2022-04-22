@@ -1,1 +1,33 @@
-<p>ubicacion works!</p>
+<div class="componente-ubicacion">
+    <div>
+        <img class="svg-atras" src="../../../assets/images/atras.svg" (click)="irAtras();">
+    </div>
+    <div class="div-icono-ubicacion">
+        <img class= "icono" src="../../../assets/images/location-svgrepo-com.svg">
+        <span class="titulo-ubicacion">Indica tu ubicación</span>
+    </div>
+    <div>
+        <div class="map-container">
+            <div class="map-frame">
+              <div id="map"></div>
+            </div>
+          </div>
+    </div>
+
+    <form #formularioUbicacion="ngForm" (ngSubmit) = "verPago(formularioUbicacion.value)">
+        <div class="row longitud-latitud">
+            <div class="col-4 my-col">
+                <input name="longitud" type="text" [(ngModel)]= "datosUbicacion.longitud" class="form-control inputs-ubicacion" placeholder="Longitud" aria-label="Longitud" aria-describedby="basic-addon1">
+            </div>
+            <div class="col-4 my-col">
+                <input name="latitud" type="text" [(ngModel)]= "datosUbicacion.latitud" class="form-control inputs-ubicacion" placeholder="Latitud" aria-label="Latitud" aria-describedby="basic-addon1">
+            </div>  
+            <div class="col-4 my-col">
+                <button type="button" class="btn btn-primary boton-checkout" (click)="buscarUbicacion()">Buscar</button>    
+            </div>  
+        </div>
+        <div class="div-siguiente" style="margin-top: 20px; text-align: center;">
+            <button type="submit" style="width: 85%" class="btn btn-primary boton-checkout" (click)="verPago(formularioUbicacion.value);" >Siguiente</button>    
+        </div>
+    </form>
+</div>

@@ -1,0 +1,59 @@
+<div class="componente-pago">
+    <div>
+        <img class="svg-atras" src="../../../assets/images/atras.svg" (click)="irAtras();">
+    </div>
+    <div class="div-icono-tarjeta">
+        <img class="pago-tarjeta" src="../../../assets/images/credit-card-svgrepo-com.svg">
+    </div>
+    <div class="div-titulo"> 
+        <p class="titulo-ubicacion">Ingresa los datos de tu tarjeta</p>
+    </div>
+    <div class="marcas-tarjetas">
+        <img class="imagen-marcas-tarjetas" src="../../../assets/images/visa-svgrepo-com.svg">
+        <img style="margin-left: 5px" class="imagen-marcas-tarjetas" src="../../../assets/images/mastercard-svgrepo-com.svg">
+    </div>
+    
+     
+    <div id="" class="containter inputsDatosTarjeta">
+        <form [formGroup]="formularioPagoTarjeta" style="padding-right: 8%;
+        padding-left: 8%;">
+            <div class="row">
+                <div class="col individualInputs">
+                    <span class="text-inputs">Numero completo tarjeta <span style="color: red;">*</span></span>
+                    <input formControlName="nombreCompletoTarjeta" style="width:100%!important" class="form-control  input-registro" type="number" required placeholder="0000 0000 0000 0000" aria-label="default input example">
+                    <span class="row msj-error" *ngIf="nombreCompletoTarjeta?.invalid && (nombreCompletoTarjeta?.dirty || nombreCompletoTarjeta?.touched)">El campo es obligatorio</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-7 individualInputs">
+                    <span class="text-inputs">Fecha vencimiento<span style="color: red;">*</span></span>
+                    <input formControlName="fechaVencimiento" class="form-control  input-registro" type="text" required placeholder="DD/MM/AAAA" aria-label="default input example">
+                    <span class="row msj-error" *ngIf="fechaVencimiento?.invalid && (fechaVencimiento?.dirty || fechaVencimiento?.touched)">El campo es obligatorio</span>
+                </div>
+                <div class="col-5 individualInputs">
+                    <span class="text-inputs">CVV/CVC<span style="color: red;">*</span></span>
+                    <input formControlName="cvvCvc" class="form-control  input-registro" type="number" required placeholder="0000" aria-label="default input example">
+                    <span class="row msj-error" *ngIf="cvvCvc?.invalid && (cvvCvc?.dirty || cvvCvc?.touched)">El campo es obligatorio</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col individualInputs">
+                    <span class="text-inputs">Nombre titular<span style="color: red;">*</span></span>
+                    <input formControlName=" nombreTitular" class="form-control  input-registro" type="text" required placeholder="Escribe..." aria-label="default input example">
+                    <span class="row msj-error" *ngIf="nombreTitular?.invalid && (nombreTitular?.dirty || nombreTitular?.touched)">El campo es obligatorio</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 div-boton" style="margin-top: 20px">
+                    <button type="button" (click)="enviarDatos()" class="btn btn-primary mt-3 mb-2 boton-finalizar">Finalizar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+

@@ -1,5 +1,5 @@
 <app-encabezado *ngIf="areaVisible != 'registro-clientes' && areaVisible != 'inicio-sesion' && areaVisible != 'landing-page'"></app-encabezado>
-<app-footer *ngIf="areaVisible != 'registro-clientes' && areaVisible != 'inicio-sesion' && areaVisible != 'landing-page'" (onVerCarrito)="verCarrito()" (onVerCategorias)="verCategorias()"></app-footer>
+<app-footer *ngIf="areaVisible != 'registro-clientes' && areaVisible != 'inicio-sesion' && areaVisible != 'landing-page'" (onVerCarrito)="verCarrito()" (onVerCategorias)="verCategorias()" (onVerCompras)="verCompras();" (onVerPerfil)="verPerfil()"></app-footer>
 <app-landing-page (onInicioSesion)="verAreaInicioSesion()" (onRegistrarse)="verRegistro()" *ngIf="areaVisible == 'landing-page'" ></app-landing-page>
 <app-inicio-sesion (onIniciarSesion)="verCategorias()" (onRegistrarse)="verRegistro()" *ngIf="areaVisible == 'inicio-sesion'"></app-inicio-sesion>
 <app-registro-clientes (onVerCategorias)="verCategorias()"  *ngIf="areaVisible == 'registro-clientes'"></app-registro-clientes>
@@ -7,6 +7,12 @@
 <app-empresas *ngIf="areaVisible == 'seccion-empresas'" (onVerDetalleEmpresa) = "verDetalleEmpresa()"></app-empresas>
 <app-productos (onRegresarEmpresa)="verDetalleEmpresa()" *ngIf="areaVisible == 'seccion-productos'"></app-productos>
 <app-detalle-empresa *ngIf="areaVisible == 'seccion-detalle-empresa'" (onVerProductos)="verProductos()"></app-detalle-empresa>
-<app-carrito *ngIf="areaVisible == 'seccion-carrito' "></app-carrito>
+<app-carrito *ngIf="areaVisible == 'seccion-carrito'" (onCheckout)="verUbicacion();"></app-carrito>
+<app-ubicacion *ngIf="areaVisible == 'seccion-ubicacion'" (onVerPago)="verPago()" (onAtras)="atrasUbicacion();"></app-ubicacion>
+<app-pago *ngIf="areaVisible == 'seccion-pago'" (onAtras)="atrasPago();"></app-pago>
+<app-mis-compras *ngIf="areaVisible == 'seccion-compras'" (onVerDetalleCompra)="verDetalleCompra();"></app-mis-compras>
+<app-detalle-compra *ngIf="areaVisible == 'detalle-compra'" (onIrAtras)="verCompras()"></app-detalle-compra>
+<app-perfil *ngIf="areaVisible == 'seccion-perfil'"></app-perfil>
+
 
 

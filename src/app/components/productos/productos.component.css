@@ -158,3 +158,19 @@ background-color: rgba(0, 136, 122, 0.8)!important;
 .botones-modal:active {
     background-color: rgba(0, 136, 122, 0.7)!important;
 }
+
+#boton-aceptar {
+    background-color: #00887A;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    width: 35%;
+}
+
+.div-modal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+}

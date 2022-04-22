@@ -19,6 +19,11 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
+import { PagoComponent } from './components/pago/pago.component';
+import { MisComprasComponent } from './components/mis-compras/mis-compras.component';
+import { DetalleCompraComponent } from './components/detalle-compra/detalle-compra.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +37,11 @@ import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
     DetalleEmpresaComponent,
     ProductosComponent,
     CarritoComponent,
-    UbicacionComponent
+    UbicacionComponent,
+    PagoComponent,
+    MisComprasComponent,
+    DetalleCompraComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

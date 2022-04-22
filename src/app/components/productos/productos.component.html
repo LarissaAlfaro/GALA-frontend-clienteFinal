@@ -115,7 +115,24 @@ margin-left: auto; margin-right: auto; margin-bottom: 70px;">
         <h3 style="margin-top:30px; margin-bottom:30px;" class="titulo-modal">Digite la cantidad.</h3>
         <div class="contenedor-botones">
         <button  type="button" class="btn btn-primary botones-modal" (click)="modal.dismiss('Cross click')">Cancelar</button>    
-        <button  type="button" class="btn btn-primary botones-modal">Aceptar</button>
+        <button  type="button" class="btn btn-primary botones-modal" (click)="abrirModal(modalProductoAgregado);">Aceptar</button>
+        </div>
+    </div>
+</ng-template>
+
+
+<ng-template #modalProductoAgregado let-modal>
+    <div class="modal-body">
+        <div class="div-modal">
+            <div style="text-align: center;">
+                <img class="close-modal" style="margin-left: 90%; height: 25px;
+                width: 25px;" (click)="modal.dismiss('Cross click')" src="../../../assets/images/xmark-solid.svg">
+                <img class="" src="../../../assets/images/check_circle_black_24dp 1.svg">
+                <h2 class="titulo-modal">Se ha agregado el producto al carrito.</h2>
+                <div class="contenedor-botones">
+                    <button  id="boton-aceptar" (click)="cerrarModales();" type="button" class="btn btn-primary" >Aceptar</button>
+                </div>
+            </div>
         </div>
     </div>
 </ng-template>

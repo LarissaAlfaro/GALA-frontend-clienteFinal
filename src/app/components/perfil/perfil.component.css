@@ -1,0 +1,53 @@
+.back-perfil{
+    background-image: url(../../../assets/images/Ellipse.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 30px;
+    justify-content: space-around;
+}
+
+.style-foto{
+    width: 150px;
+    height: 150px;
+}
+
+.img-perfil{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 40px;
+}
+
+.nombre-usuario{
+    font-weight: bold;
+    font-size: large;
+    color:#00887A;
+}
+
+.icons{
+    color: #FFCCBC;
+}
+
+.text{
+    color: #00887A;
+}
+
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: #00887A;
+    border-color: #00887A;
+}
+
+.btn-outline-success{
+    border-radius: 40px;
+    border-color: #00887A;
+    color: #00887A;
+}
+
+.form-control{
+    width: 80px;
+}
+
+.upload{
+    cursor: pointer;
+}
