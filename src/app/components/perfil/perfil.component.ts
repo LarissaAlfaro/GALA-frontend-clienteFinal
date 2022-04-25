@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faCakeCandles, faEnvelope, faRightFromBracket, faCamera } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ClientesService } from '../../services/clientes.service'
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
@@ -13,7 +14,9 @@ export class PerfilComponent implements OnInit {
   faRightFromBracket = faRightFromBracket;
   faCamera = faCamera;
 
-  constructor( private serviceModal: NgbModal) { }
+  constructor( public serviceModal: NgbModal,
+    public clientesService : ClientesService
+    ) { }
 
   ngOnInit(): void {
   }

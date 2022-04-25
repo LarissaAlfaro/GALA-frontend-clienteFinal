@@ -36,7 +36,7 @@
         <b>¿Está seguro que desea cerrar sesión?</b>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-outline-primary" (click)="modal.close('')">Cerrar Sesión </button>
+      <button type="button" class="btn btn-outline-primary" (click)="clientesService.cerrarSesion(); serviceModal.dismissAll()">Cerrar Sesión </button>
       <button type="button" class="btn btn-outline-primary" (click)="modal.close('')">Cancelar</button>
     </div>
 </ng-template>

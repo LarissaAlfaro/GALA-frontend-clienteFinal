@@ -40,11 +40,15 @@
                     <div class="container-fluid">
                         <div class="row">
                             <p style="padding-top: 20px;" class="texto-seccion4">¿Ya tienes una cuenta?</p>
-                            <button type="button" (click)="verInicioSesion()" class="btn btn-primary botones-seccion4">Inicia Sesión</button>
+                            <a routerLink="clientes/inicio-sesion">
+                                <button type="button" (click)="verInicioSesion()" class="btn btn-primary botones-seccion4">Inicia Sesión</button>
+                            </a>
                         </div>
                         <div class="row">
                             <p style="padding-top: 25px;" class="texto-seccion4">O si no crea una</p>
-                            <button type="button" (click)="verRegistroClientes()" class="btn btn-primary botones-seccion4">Regístrate</button>
+                            <a routerLink="clientes/registro">
+                                <button type="button" (click)="verRegistroClientes()" class="btn btn-primary botones-seccion4">Regístrate</button>
+                            </a> 
                         </div>
                     </div>
                 </div>

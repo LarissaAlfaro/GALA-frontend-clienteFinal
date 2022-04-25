@@ -39,3 +39,30 @@
     background: #77A6F7;
     border-radius: 20px;
 }
+
+.msj-error{
+    color: white;
+    margin-left: 5px;
+    font-size: x-small;
+}
+
+.titulo-modal {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14.5px;
+    line-height: 15px;
+    text-align: center;
+    color: #000000;
+    margin-top: 20px;
+}
+
+#boton-aceptar {
+    background-color: #00887A;
+    border-radius: 20px;
+    margin-left: 33%;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    width: 35%;
+}
+

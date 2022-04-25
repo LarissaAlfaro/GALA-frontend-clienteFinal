@@ -23,6 +23,10 @@ import { PagoComponent } from './components/pago/pago.component';
 import { MisComprasComponent } from './components/mis-compras/mis-compras.component';
 import { DetalleCompraComponent } from './components/detalle-compra/detalle-compra.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
+import { ClientesService } from './services/clientes.service';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { AuthGuard } from './auth.guard'
+import { TokenInterceptorService } from './services/token-interceptor.service'
 
 @NgModule({
   declarations: [
@@ -51,9 +55,14 @@ import { PerfilComponent } from './components/perfil/perfil.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserModule, 
-    NgxUsefulSwiperModule
+    NgxUsefulSwiperModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ClientesService, AuthGuard, {
+    provide: HTTP_INTERCEPTORS, 
+    useClass: TokenInterceptorService,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {FooterComponent} from "../footer/footer.component"
+import { EncabezadoComponent } from "../encabezado/encabezado.component"
 
 
 @Component({
