@@ -8,6 +8,18 @@ import {FooterComponent} from "./components/footer/footer.component"
 import { EncabezadoComponent } from "./components/encabezado/encabezado.component"
 import { PerfilComponent } from "./components/perfil/perfil.component"
 import { AuthGuard } from './auth.guard'
+import { EmpresasComponent } from './components/empresas/empresas.component';
+import { UrlSegment } from '@angular/router';
+
+const nombreCategoriaRegex = '[A-Z,a-z]+'
+const rutaSeccionCategorias = 'clientes/categorias'
+
+const regexMatcher = (url: UrlSegment[]) => {
+  return url.length === 3 && url[2].path.match(nombreCategoriaRegex)
+    ? { consumed: url }
+    : null;
+};
+
 
 const routes: Routes = [
   {
@@ -30,9 +42,13 @@ const routes: Routes = [
   {
     path: 'clientes/perfil',
     component: PerfilComponent
+  },
+  {
+    matcher: regexMatcher,
+    component: EmpresasComponent
   }
-
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

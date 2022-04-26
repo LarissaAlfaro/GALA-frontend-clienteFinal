@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { EncabezadoComponent } from '../encabezado/encabezado.component'
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-empresas',

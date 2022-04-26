@@ -17,7 +17,12 @@ export class ClientesService {
 
 
   registro(usuario:any) {
+    usuario.imagen = "https://res.cloudinary.com/galadelivery/image/upload/v1650945342/Images/imagenPorDefecto_cufrlh.png";
     return this.http.post<any>(this.URL + '/registro', usuario);
+  }
+
+  obtenerUsuarioActual(){
+    return this.http.get<any>(this.URL + '/obtenerUsuarioAutenticado');
   }
 
   inicioSesion(usuario:any) {
