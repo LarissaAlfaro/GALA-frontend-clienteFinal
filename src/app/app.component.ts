@@ -9,6 +9,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Gala-Frontend-Clientes';
   areaVisible = "landing-page";
+  categoriaActual: any;
+
 
   verAreaInicioSesion(){
     this.areaVisible = 'inicio-sesion';
@@ -25,8 +27,10 @@ export class AppComponent {
     this.areaVisible = "seccion-categorias";
   }
 
-  verEmpresas() {
-    this.areaVisible = "seccion-empresas";
+  verEmpresas($event:any) {
+    //this.areaVisible = "seccion-empresas";
+    this.categoriaActual=$event;
+    console.log("categoria actual desde el componente padre" , this.categoriaActual)
   }
 
   verDetalleEmpresa() {
@@ -68,4 +72,5 @@ export class AppComponent {
   verPerfil() {
     this.areaVisible = "seccion-perfil";
   }
+
 }

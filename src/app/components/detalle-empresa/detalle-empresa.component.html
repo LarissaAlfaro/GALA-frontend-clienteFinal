@@ -1,46 +1,43 @@
+<app-encabezado></app-encabezado>
 <div class="container-fluclass" style="width: 90%;
-margin-left: auto; margin-right: auto; margin-bottom: 70px;">
+margin-left: auto; margin-right: auto; margin-bottom: 150px;">
    <div class="row">
        <div class="col">
            <img class="svg-atras" src="../../../assets/images/atras.svg">
-           <p class="categoria-atras">Hogar</p>
+           <p style="margin-left: 12%;" class="categoria-atras">{{categoriaSelect}}</p>
        </div>
    </div>
    <div class="row">
         <div class="scrolling-wrapper ::-webkit-scrollbar">
-            <div class="scrolling-wrapper-fexbox card cards-nav" style=" border: 1px solid rgba(0,0,0,0)"><h2 class="cards-nav-letra">Diunsa</h2></div>
-            <div class="scrolling-wrapper-fexbox card cards-nav" style=" border: 1px solid rgba(0,0,0,0)"><h2 class="cards-nav-letra">Elektra</h2></div>
-            <div class="scrolling-wrapper-fexbox card cards-nav" style=" border: 1px solid rgba(0,0,0,0)"><h2 class="cards-nav-letra">Amazon</h2></div>
-            <div class="scrolling-wrapper-fexbox card cards-nav" style=" border: 1px solid rgba(0,0,0,0)"><h2 class="cards-nav-letra">PricesSmart</h2></div>
-            <div class="scrolling-wrapper-fexbox card cards-nav" style=" border: 1px solid rgba(0,0,0,0)"><h2 class="cards-nav-letra">PricesSmart</h2></div>
-            <div class="scrolling-wrapper-fexbox card cards-nav" style=" border: 1px solid rgba(0,0,0,0)"><h2 class="cards-nav-letra">PricesSmart</h2></div>
+            <div class="scrolling-wrapper-fexbox card cards-nav" style=" border: 1px solid rgba(0,0,0,0)" *ngFor="let empresa of empresas"><h2 class="cards-nav-letra">{{empresa.nombre}}</h2></div>
         </div>
     </div>
     <div class="row">
         <div class="col">
             <div class="card detalle-empresa">
                 <div class="card-body cuerpo-card">
-                    <img src="../../../assets/images/empresa4.svg" class="card-img-top imagenes-empresas" alt="...">
+                    <img src="{{objetoEmpresa.banner}}" alt="..." class="imagen-banner">
+                    <div class="row" style="height: 100px!important;text-align:center">
+                        <img src="{{objetoEmpresa.logo}}" class="rounded-circle imagen-empresa">
+                        
+                    </div>
                     <div class="calificacion">
-                            <img src="../../../assets/images/est-llena.svg">
-                            <img src="../../../assets/images/est-llena.svg">
-                            <img src="../../../assets/images/est-mitad.svg">
-                            <img src="../../../assets/images/est-vacia.svg">
-                            <img src="../../../assets/images/est-vacia.svg">
+                            <img src="{{estrella}}" *ngFor="let estrella of estrellasCalificacion">
                     </div>
-                    <p class="texto-card-empresa">Hogar, electrodomésticos y mucho <br>más...</p>
+                    <p class="texto-card-empresa">{{objetoEmpresa.nombre}}</p>
                     <div class="contenedor-texto">
-                        <fa-icon style="color: rgba(0, 136, 122, 0.4)" class="icons" [icon]="faCircleInfo"></fa-icon><span class=" texto-empresa descripcion-empresa">Vendemos los mejores electrodomésticos y muebles en la ciudad, a los mejores precios.</span>
+                        <fa-icon style="color: rgba(0, 136, 122, 0.4)" class="icons" [icon]="faCircleInfo"></fa-icon><span class=" texto-empresa descripcion-empresa">{{objetoEmpresa.descripcion}}</span>
                     </div>
                     <div class="contenedor-texto">
-                        <fa-icon style="color: rgba(0, 136, 122, 0.4)" class="icons" [icon]="faLocationDot"></fa-icon><span class="texto-empresa direccion">Boulevard Juan Pablo, centro comercial Plaza Juan Casco</span>
+                        <fa-icon style="color: rgba(0, 136, 122, 0.4)" class="icons" [icon]="faLocationDot"></fa-icon><span class="texto-empresa direccion">{{objetoEmpresa.ubicacion}}</span>
                     </div>
-                    <div class="contenedor-texto">   
-                        <fa-icon style="color: rgba(0, 136, 122, 0.4)" class="icons" [icon]="faClock"></fa-icon><span class=" texto-empresa horario">10:00 a.m. - 7:00 p.m.</span>
+                    <div class="contenedor-texto" style="margin-bottom:25px;">   
+                        <fa-icon style="color: rgba(0, 136, 122, 0.4)" class="icons" [icon]="faClock"></fa-icon><span class=" texto-empresa horario">{{objetoEmpresa.horaInicio}} - {{objetoEmpresa.horaFinal}}</span>
                     </div>
-                    <button class="boton-ver-productos" (click)="verProductos();">Ver Productos</button> 
+                    <button class="boton-ver-productos" (click)="verProductos()">Ver Productos</button> 
                 </div>
             </div>
         </div>
     </div>
 </div>
+<app-footer></app-footer>

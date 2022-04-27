@@ -8,7 +8,7 @@ margin-left: auto; margin-right: auto; margin-bottom: 70px;">
     </div>
     <div class="row" style="margin-top:35px">
         <div class="col-6">
-            <div class="card my-cards" (click)="verEmpresas(categoria)" *ngFor="let categoria of categorias.slice(0,5)">
+            <div class="card my-cards" (click)="verEmpresas(categoria)" *ngFor="let categoria of categorias.slice(0,6)">
                 <div class="card-body my-card-body">
                     <div class="iconos-cards">
                         <img src="{{categoria.imagen}}" class="">
@@ -20,7 +20,7 @@ margin-left: auto; margin-right: auto; margin-bottom: 70px;">
             </div>
         </div>
         <div class="col-6">
-            <div class="card my-cards" (click)="verEmpresas(categoria)" *ngFor="let categoria of categorias.slice(6,11)">
+            <div class="card my-cards" (click)="verEmpresas(categoria)" *ngFor="let categoria of categorias.slice(6,12)">
                 <div class="card-body my-card-body">
                     <div class="iconos-cards">
                         <img src="{{categoria.imagen}}" class="">

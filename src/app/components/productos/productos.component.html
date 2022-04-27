@@ -1,103 +1,38 @@
+<app-encabezado></app-encabezado>
 <div class="container-fluclass" style="width: 90%;
 margin-left: auto; margin-right: auto; margin-bottom: 70px;">
    <div class="row">
        <div class="col">
            <img (click)="regresarVerEmpresa()" class="svg-atras" src="../../../assets/images/atras.svg">
-           <p (click)="regresarVerEmpresa()" class="categoria-atras">Hogar<span (click)="regresarVerEmpresa()"> /  Elektra</span></p>
+           <p (click)="regresarVerEmpresa()" class="categoria-atras">{{categoriaSelect}}<span (click)="regresarVerEmpresa()"> / {{empresaSeleccionada}}</span></p>
        </div>
    </div>
     <div class="row">
         <div class="col">
-            <swiper [config]="config">
+            <swiper [config]="config" style="margin-bottom:400px!important; height: 800px;">
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide">
+                  <div class="swiper-slide" *ngFor="let producto of productosEmpresa">
                       <div class="card-interno-producto">
-                         <img class="imagen-card-productos" src="../../../assets/images/image 10 (1).svg">
-                        <div class="titulo-producto">
-                            Cama
+                         <img class="imagen-card-productos" src={{producto.imagen}}>
+                        <div class="titulo-producto" style="margin-top: 15px;">
+                            {{producto.nombre}}
                         </div>
-                        <div class="descripcion-producto">
-                            Cama sumamente cómoda,semi-ortopédica para descanses de la mejor manera.
+                        <div class="descripcion-producto" style="margin-top: 10px;">
+                            {{producto.descripcion}}
                         </div>
-                        <div class="precio">
-                            Lps. 5500
+                        <div class="precio" style="margin-top: 10px;">
+                            L. {{producto.precio}}
                         </div>
                         <div class="svg-agregar">
-                            <img class="svg-agregar-productos" src="../../../assets/images/add_circle_black_24dp 1 (1).svg" (click)="abrirModal(modalAgregarArticulo);">
+                            <img class="svg-agregar-productos" src="../../../assets/images/add_circle_black_24dp 1 (1).svg" (click)="abrirModalAgregarProducto(modalAgregarArticulo, producto);">
                         </div>
                       </div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="card-interno-producto">
-                       <img class="imagen-card-productos" src="../../../assets/images/image 10 (1).svg">
-                      <div class="titulo-producto">
-                          Cama
-                      </div>
-                      <div class="descripcion-producto">
-                          Cama sumamente cómoda,semi-ortopédica para descanses de la mejor manera.
-                      </div>
-                      <div class="precio">
-                          Lps. 5500
-                      </div>
-                      <div class="svg-agregar">
-                          <img class="svg-agregar-productos" src="../../../assets/images/add_circle_black_24dp 1 (1).svg" (click)="abrirModal(modalAgregarArticulo);">
-                      </div>
-                    </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card-interno-producto">
-                        <img class="imagen-card-productos" src="../../../assets/images/image 10 (1).svg">
-                        <div class="titulo-producto">
-                            Cama
-                        </div>
-                        <div class="descripcion-producto">
-                            Cama sumamente cómoda,semi-ortopédica para descanses de la mejor manera.
-                        </div>
-                        <div class="precio">
-                            Lps. 5500
-                        </div>
-                        <div class="svg-agregar">
-                            <img class="svg-agregar-productos" src="../../../assets/images/add_circle_black_24dp 1 (1).svg" (click)="abrirModal(modalAgregarArticulo);">
-                        </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card-interno-producto">
-                        <img class="imagen-card-productos" src="../../../assets/images/image 10 (1).svg">
-                        <div class="titulo-producto">
-                            Cama
-                        </div>
-                        <div class="descripcion-producto">
-                            Cama sumamente cómoda,semi-ortopédica para descanses de la mejor manera.
-                        </div>
-                        <div class="precio">
-                            Lps. 5500
-                        </div>
-                        <div class="svg-agregar">
-                            <img class="svg-agregar-productos" src="../../../assets/images/add_circle_black_24dp 1 (1).svg" (click)="abrirModal(modalAgregarArticulo);">
-                        </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card-interno-producto">
-                        <img class="imagen-card-productos" src="../../../assets/images/image 10 (1).svg">
-                        <div class="titulo-producto">
-                            Cama
-                        </div>
-                        <div class="descripcion-producto">
-                            Cama sumamente cómoda,semi-ortopédica para descanses de la mejor manera.
-                        </div>
-                        <div class="precio">
-                            Lps. 5500
-                        </div>
-                        <div class="svg-agregar">
-                            <img class="svg-agregar-productos" src="../../../assets/images/add_circle_black_24dp 1 (1).svg" (click)="abrirModal(modalAgregarArticulo);"> 
-                        </div>
-                        </div>
-                    </div>
                 </div>
                 <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
+                <!--<div class="swiper-pagination"></div>-->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </swiper>   
         </div>
     </div>
@@ -110,12 +45,12 @@ margin-left: auto; margin-right: auto; margin-bottom: 70px;">
         width: 25px;" (click)="modal.dismiss('Cross click')" src="../../../assets/images/xmark-solid.svg">
         <h2 class="titulo-modal">¿Cuántas unidades deseas <br> agregar?</h2>
         <div class="input-group mb-3 contenedor-input">
-            <input type="number" class="form-control input-unidades" min="1" max="9999">
+            <input type="number" [(ngModel)]="unidadesProducto" class="form-control input-unidades" min="1" max="9999">
         </div>
         <h3 style="margin-top:30px; margin-bottom:30px;" class="titulo-modal">Digite la cantidad.</h3>
         <div class="contenedor-botones">
         <button  type="button" class="btn btn-primary botones-modal" (click)="modal.dismiss('Cross click')">Cancelar</button>    
-        <button  type="button" class="btn btn-primary botones-modal" (click)="abrirModal(modalProductoAgregado);">Aceptar</button>
+        <button  type="button" class="btn btn-primary botones-modal" (click)="agregarProductoCarrito(); abrirModal(modalProductoAgregado);">Aceptar</button>
         </div>
     </div>
 </ng-template>
@@ -130,10 +65,11 @@ margin-left: auto; margin-right: auto; margin-bottom: 70px;">
                 <img class="" src="../../../assets/images/check_circle_black_24dp 1.svg">
                 <h2 class="titulo-modal">Se ha agregado el producto al carrito.</h2>
                 <div class="contenedor-botones">
-                    <button  id="boton-aceptar" (click)="cerrarModales();" type="button" class="btn btn-primary" >Aceptar</button>
+                    <button  id="boton-aceptar" (click)="cerrarModales();" type="button" class="btn btn-primary">Aceptar</button>
                 </div>
             </div>
         </div>
     </div>
 </ng-template>
+<app-footer></app-footer>
 

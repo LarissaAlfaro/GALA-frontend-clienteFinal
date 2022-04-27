@@ -23,8 +23,8 @@
 	justify-content: center;
 	align-items: stretch;
 	align-content: stretch;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .iconos-cards {
@@ -95,6 +95,11 @@
 
 .imagenes-empresas {
     align-self: center;
-    height: 55px;
+    width: 98%
+}
+
+.imagenes {
+    height: 110px;
+    width: 100%;
 }
 

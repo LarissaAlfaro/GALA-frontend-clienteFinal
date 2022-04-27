@@ -22,6 +22,7 @@ export class CategoriasComponent implements OnInit {
 
   categorias:any = []
   usuarioActual:any;
+  categoriaSeleccionada: any;
 
   ngOnInit(): void {
     this.categoriasService.obtenerCategorias().subscribe(
@@ -45,8 +46,12 @@ export class CategoriasComponent implements OnInit {
   }
 
   verEmpresas(categoria: any) {
+
+    this.onVerEmpresas.emit(categoria);
+
     console.log('Ver empresas de la categoria: ' , categoria);
+    
+    this.categoriaSeleccionada = categoria;
     this.router.navigate([`/clientes/categorias/${categoria.nombre}`]);
-    //this.onVerEmpresas.emit();
   }
 }

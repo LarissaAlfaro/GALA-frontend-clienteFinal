@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -11,7 +12,8 @@ export class LandingPageComponent implements OnInit {
   @Output() onRegistrarse = new EventEmitter();
 
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal,
+    private router:Router) { }
 
   ngOnInit(): void {
   }

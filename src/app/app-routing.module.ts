@@ -10,15 +10,30 @@ import { PerfilComponent } from "./components/perfil/perfil.component"
 import { AuthGuard } from './auth.guard'
 import { EmpresasComponent } from './components/empresas/empresas.component';
 import { UrlSegment } from '@angular/router';
+import { DetalleEmpresaComponent } from './components/detalle-empresa/detalle-empresa.component';
+import { ProductosComponent } from './components/productos/productos.component';
 
 const nombreCategoriaRegex = '[A-Z,a-z]+'
 const rutaSeccionCategorias = 'clientes/categorias'
 
-const regexMatcher = (url: UrlSegment[]) => {
+const regexMatcherCategorias = (url: UrlSegment[]) => {
   return url.length === 3 && url[2].path.match(nombreCategoriaRegex)
     ? { consumed: url }
     : null;
 };
+
+const regexMatcherEmpresas = (url: UrlSegment[]) => {
+  return url.length === 5 && url[4].path.match(nombreCategoriaRegex)
+    ? { consumed: url }
+    : null;
+};
+
+const regexMatcherProductosEmpresa = (url: UrlSegment[]) => {
+  return url.length === 6 && url[4].path.match(nombreCategoriaRegex)
+    ? { consumed: url }
+    : null;
+};
+
 
 
 const routes: Routes = [
@@ -44,9 +59,18 @@ const routes: Routes = [
     component: PerfilComponent
   },
   {
-    matcher: regexMatcher,
+    matcher: regexMatcherCategorias,
     component: EmpresasComponent
+  },
+  {
+    matcher: regexMatcherEmpresas,
+    component: DetalleEmpresaComponent
+  },
+  {
+    matcher: regexMatcherProductosEmpresa,
+    component: ProductosComponent
   }
+
 ];
 
 
