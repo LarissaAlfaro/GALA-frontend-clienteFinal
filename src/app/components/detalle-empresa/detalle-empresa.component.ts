@@ -25,7 +25,17 @@ export class DetalleEmpresaComponent implements OnInit {
   empresas: any
   categoriaSelect: any;
   empresaSeleccionada: any;
-  objetoEmpresa: any;
+  objetoEmpresa = {
+    "banner":"",
+    "logo":"",
+    "nombre":"",
+    "calificacion":"",
+    "horaInicio":"",
+    "horaFinal":"",
+    "ubicacion":"",
+    "descripcion":""
+  }
+
   estrellasCalificacion: any = [];
   i:any =0;
 
@@ -35,7 +45,6 @@ export class DetalleEmpresaComponent implements OnInit {
     const segments = this.rutaActual.split('/');
     this.categoriaSelect = decodeURI(segments[3])
     this.empresaSeleccionada = decodeURI(segments[5])
-
 
 
     console.log("empresa seleccionada" , this.empresaSeleccionada);
