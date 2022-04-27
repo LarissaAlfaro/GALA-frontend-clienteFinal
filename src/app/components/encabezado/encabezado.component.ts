@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientesService } from "../../services/clientes.service"
 
 @Component({
   selector: 'app-encabezado',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EncabezadoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private clienteService:ClientesService) { }
   numeroProductosCarrito: any;
   productosCarrito: any = [];
+  usuarioActual:any;
   
 
   ngOnInit(): void {
@@ -20,8 +22,18 @@ export class EncabezadoComponent implements OnInit {
       this.productosCarrito = localStorage.getItem('productos');
       this.productosCarrito = JSON.parse(this.productosCarrito);
       this.numeroProductosCarrito = this.productosCarrito.length;
-     
     }
+
+
+    this.clienteService.obtenerUsuarioActual().subscribe(
+      res=>{
+        this.usuarioActual = res;
+        console.log("usuario acutal desde el navbar", this.usuarioActual)
+      },
+      err=>{
+        console.log(err);
+      }
+    )
 
 
   }

@@ -11,6 +11,12 @@ export class AppComponent {
   areaVisible = "landing-page";
   categoriaActual: any;
 
+  usuarioActual: any;
+
+  constructor() {
+  
+  }
+
 
   verAreaInicioSesion(){
     this.areaVisible = 'inicio-sesion';
@@ -72,5 +78,6 @@ export class AppComponent {
   verPerfil() {
     this.areaVisible = "seccion-perfil";
   }
+
 
 }

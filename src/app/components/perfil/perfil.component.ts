@@ -16,12 +16,23 @@ export class PerfilComponent implements OnInit {
   faCakeCandles = faCakeCandles;
   faRightFromBracket = faRightFromBracket;
   faCamera = faCamera;
+  usuarioActual: any;
 
   constructor( public serviceModal: NgbModal,
     public clientesService : ClientesService
     ) { }
 
   ngOnInit(): void {
+
+    this.clientesService.obtenerUsuarioActual().subscribe(
+      res=>{
+        this.usuarioActual = res;
+        console.log("usuario acutal desde el perfil", this.usuarioActual)
+      },
+      err=>{
+        console.log(err);
+      }
+    )
   }
 
   abrirModalCerrarSesion(modal:any){
@@ -33,5 +44,4 @@ export class PerfilComponent implements OnInit {
       }
       );
   }
-
 }
