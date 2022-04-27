@@ -1,4 +1,4 @@
-<app-encabezado *ngIf="areaVisible != 'registro-clientes' && areaVisible != 'inicio-sesion' && areaVisible != 'landing-page'"></app-encabezado>
+<app-encabezado #encabezado *ngIf="areaVisible != 'registro-clientes' && areaVisible != 'inicio-sesion' && areaVisible != 'landing-page'"></app-encabezado>
 <app-footer *ngIf="areaVisible != 'registro-clientes' && areaVisible != 'inicio-sesion' && areaVisible != 'landing-page'" (onVerCarrito)="verCarrito()" (onVerCategorias)="verCategorias()" (onVerCompras)="verCompras();" (onVerPerfil)="verPerfil()"></app-footer>
 <!--<app-landing-page (onInicioSesion)="verAreaInicioSesion()" (onRegistrarse)="verRegistro()" *ngIf="areaVisible == 'landing-page'" ></app-landing-page>-->
 <app-inicio-sesion (onIniciarSesion)="verCategorias()" (onRegistrarse)="verRegistro()" *ngIf="areaVisible == 'inicio-sesion'"></app-inicio-sesion>
@@ -12,7 +12,7 @@
 <app-pago *ngIf="areaVisible == 'seccion-pago'" (onAtras)="atrasPago();"></app-pago>
 <app-mis-compras *ngIf="areaVisible == 'seccion-compras'" (onVerDetalleCompra)="verDetalleCompra();"></app-mis-compras>
 <app-detalle-compra *ngIf="areaVisible == 'detalle-compra'" (onIrAtras)="verCompras()"></app-detalle-compra>
-<app-perfil *ngIf="areaVisible == 'seccion-perfil'"></app-perfil>
+<app-perfil (onActualizar)="actualizarEncabezado()" *ngIf="areaVisible == 'seccion-perfil'"></app-perfil>
 <router-outlet></router-outlet>
 
 
