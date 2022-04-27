@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { faCakeCandles, faEnvelope, faRightFromBracket, faCamera } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ClientesService } from '../../services/clientes.service'
+import { EncabezadoComponent } from '../encabezado/encabezado.component'
+import { FooterComponent } from '../footer/footer.component';
+
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',

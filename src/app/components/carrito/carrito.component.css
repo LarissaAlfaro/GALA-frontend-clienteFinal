@@ -108,3 +108,12 @@ html, body {
     width: 100vw;
     text-align: center;
 }
+
+.contenedor-carrito-vacio {
+    text-align: center;
+}
+
+.imagen-carrito-vacio {
+    width: 40vw;
+    margin-top: 35%;
+}

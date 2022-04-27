@@ -1,20 +1,21 @@
-<div class="contenedor-carrito">
+<app-encabezado></app-encabezado>
+<div class="contenedor-carrito" *ngIf="areaVisible == 'carrito-productos'">
     <div class="container">
-        <div class="row" style="padding-top: 4%;"> 
+        <div class="row" style="padding-top: 4%;" *ngFor="let producto of productosCarrito"> 
             <div class="col-3 contenedor-imagenes">
                 <img src="../../../assets/images/image 11.svg" class="imagen-producto-carrito">
             </div>
             <div class="col-9 contenedor-texto">
                 <div class="row">
-                    <p class="textos-carrito nombre-producto">Hamburguesa Suprema</p>
+                    <p class="textos-carrito nombre-producto">{{producto.nombre}}</p>
                     <fa-icon class="icons svg-eliminar-producto" [icon]="faXmark"></fa-icon>
                 </div>
                 <div class="row" style="position: relative; bottom: 7%;">
-                    <p class="textos-carrito texto-establecimiento">Burger King</p>
+                    <p class="textos-carrito texto-establecimiento">{{producto.empresa.nombre}}</p>
                 </div>
                 <div class="row" style="position: relative; bottom: 13%;"> 
                     <p class="textos-carrito texto-descripcion">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        {{producto.descripcion}}
                     </p>
                 </div>
                 <div class="row" style="position: relative; bottom: 20%;">
@@ -22,88 +23,7 @@
                     <span class="textos-carrito cantidad-producto" style="margin-right: 3%">03</span>
                     <fa-icon class="icons" [icon]="faCirclePlus"></fa-icon>
 
-                    <span class="textos-carrito precio">Lps. 110.00</span>
-                </div>
-            </div>
-            <hr class="hr">
-        </div>
-        <div class="row" style="padding-top: 4%;"> 
-            <div class="col-3 contenedor-imagenes">
-                <img src="../../../assets/images/image 11.svg" class="imagen-producto-carrito">
-            </div>
-            <div class="col-9 contenedor-texto">
-                <div class="row">
-                    <p class="textos-carrito nombre-producto">Hamburguesa Suprema</p>
-                    <fa-icon class="icons svg-eliminar-producto" [icon]="faXmark"></fa-icon>
-                </div>
-                <div class="row" style="    position: relative; bottom: 7%;">
-                    <p class="textos-carrito texto-establecimiento">Burger King</p>
-                </div>
-                <div class="row" style="position: relative; bottom: 13%;"> 
-                    <p class="textos-carrito texto-descripcion">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    </p>
-                </div>
-                <div class="row" style="position: relative; bottom: 20%;">
-                    <fa-icon class="icons signo-menos" [icon]="faCircleMinus"></fa-icon>
-                    <span class="textos-carrito cantidad-producto" style="margin-right: 3%">03</span>
-                    <fa-icon class="icons" [icon]="faCirclePlus"></fa-icon>
-
-                    <span class="textos-carrito precio">Lps. 110.00</span>
-                </div>
-            </div>
-            <hr class="hr">
-        </div>
-        <div class="row" style="padding-top: 4%;"> 
-            <div class="col-3 contenedor-imagenes">
-                <img src="../../../assets/images/image 11.svg" class="imagen-producto-carrito">
-            </div>
-            <div class="col-9 contenedor-texto">
-                <div class="row">
-                    <p class="textos-carrito nombre-producto">Hamburguesa Suprema</p>
-                    <fa-icon class="icons svg-eliminar-producto" [icon]="faXmark"></fa-icon>
-                </div>
-                <div class="row" style="    position: relative; bottom: 7%;">
-                    <p class="textos-carrito texto-establecimiento">Burger King</p>
-                </div>
-                <div class="row" style="position: relative; bottom: 13%;"> 
-                    <p class="textos-carrito texto-descripcion">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    </p>
-                </div>
-                <div class="row" style="position: relative; bottom: 20%;">
-                    <fa-icon class="icons signo-menos" [icon]="faCircleMinus"></fa-icon>
-                    <span class="textos-carrito cantidad-producto" style="margin-right: 3%">03</span>
-                    <fa-icon class="icons" [icon]="faCirclePlus"></fa-icon>
-
-                    <span class="textos-carrito precio">Lps. 110.00</span>
-                </div>
-            </div>
-            <hr class="hr">
-        </div>
-        <div class="row" style="padding-top: 4%;"> 
-            <div class="col-3 contenedor-imagenes">
-                <img src="../../../assets/images/image 11.svg" class="imagen-producto-carrito">
-            </div>
-            <div class="col-9 contenedor-texto">
-                <div class="row">
-                    <p class="textos-carrito nombre-producto">Hamburguesa Suprema</p>
-                    <fa-icon class="icons svg-eliminar-producto" [icon]="faXmark"></fa-icon>
-                </div>
-                <div class="row" style="    position: relative; bottom: 7%;">
-                    <p class="textos-carrito texto-establecimiento">Burger King</p>
-                </div>
-                <div class="row" style="position: relative; bottom: 13%;"> 
-                    <p class="textos-carrito texto-descripcion">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    </p>
-                </div>
-                <div class="row" style="position: relative; bottom: 20%;">
-                    <fa-icon class="icons signo-menos" [icon]="faCircleMinus"></fa-icon>
-                    <span class="textos-carrito cantidad-producto" style="margin-right: 3%">03</span>
-                    <fa-icon class="icons" [icon]="faCirclePlus"></fa-icon>
-
-                    <span class="textos-carrito precio">Lps. 110.00</span>
+                    <span class="textos-carrito precio">Lps. {{producto.precio}}</span>
                 </div>
             </div>
             <hr class="hr">
@@ -115,21 +35,21 @@
                 <span class="especificaciones subtotal-carrito">Subtotal</span>
             </div>
             <div class="col-4"> 
-                <span class="costos">Lps.3213</span>
+                <span class="costos">Lps.{{subtotal}}</span>
             </div>
         </div>
         <div class="row detalles-factura">
             <div class="col-8"> 
                 <span class="especificaciones isv">ISV</span></div>
             <div class="col-4">
-                <span class="costos">Lps.15</span>
+                <span class="costos">Lps.{{isv}}</span>
             </div>
         </div>
         <div class="row detalles-factura">
             <div class="col-8">
                 <span class="especificaciones comision">Comisión</span></div>
             <div class="col-4">
-                <span class="costos">Lps.18</span>
+                <span class="costos">Lps.{{comision}}</span>
             </div>
             <hr class="horizontal-row">
         </div>
@@ -139,7 +59,7 @@
                 <span class="especificaciones total">Total</span>
             </div>
             <div class="col-4">
-                <span class="costos" style="font-weight: 700;">Lps.2341</span>
+                <span class="costos" style="font-weight: 700;">Lps.{{total}}</span>
             </div>
         </div>
     </div>
@@ -147,4 +67,16 @@
         <button type="button" class="btn btn-primary boton-checkout" (click)= "checkout();">Checkout</button>    
     </div>
 </div>
-   
+
+
+<div class="contenedor-carrito" *ngIf="areaVisible == 'carrito-vacio'">
+    <div class="container">
+        <div class="row" style="padding-top: 4%;     height: 100vh;"> 
+            <div class="col-12 contenedor-carrito-vacio">
+                <img src="../../../assets/images/Group 3 (1).svg" class="imagen-carrito-vacio">
+            </div>
+        </div>
+    </div>
+</div>
+           
+<app-footer></app-footer>

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { faHouse, faUserLarge, faBagShopping, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -16,38 +17,49 @@ export class FooterComponent implements OnInit {
   faBagShopping = faBagShopping;
   faCartShopping = faCartShopping;
 
+  constructor(private router:Router) {}
+
   areaVisible:string = "";
   status:boolean = true;
+  seccionCategorias = true;
+  seccionVerCarrito = false;
+  seccionAreaCompras = false;
+  seccionAreaPerfil = false;
 
   ngOnInit(): void {
   
   }
 
   verAreaCarrito(){
-    if (this.status == true) {
-      this.status = false;
-    }
-    this.onVerCarrito.emit();
+    this.seccionCategorias = false;
+    this.seccionVerCarrito = true;
+    this.seccionAreaCompras = false;
+    this.seccionAreaPerfil = false; 
+    this.router.navigate([`/clientes/carrito`]);
   }
 
   verAreaCompras(){
-    if (this.status == true) {
-      this.status = false;
-    }
-    this.onVerCompras.emit();
+    this.seccionCategorias = false;
+    this.seccionVerCarrito = false;
+    this.seccionAreaCompras = true;
+    this.seccionAreaPerfil = false; 
+    //this.router.navigate([`/clientes/ordenes`]);
   }
 
   verAreaCategorias(){
-    this.onVerCategorias.emit();
-    this.status = !this.status;
+    this.seccionCategorias = true;
+    this.seccionVerCarrito = false;
+    this.seccionAreaCompras = false;
+    this.seccionAreaPerfil = false; 
+    this.router.navigate([`/clientes/categorias`]);
   }
 
   verAreaPerfil(){
-    if (this.status == true) {
-      this.status = false;
-    }
-    this.onVerPerfil.emit();
-
+    this.seccionCategorias = false;
+    this.seccionVerCarrito = false;
+    this.seccionAreaCompras = false;
+    this.seccionAreaPerfil = true; 
+    this.router.navigate([`/clientes/perfil`]);
   }
 
 }

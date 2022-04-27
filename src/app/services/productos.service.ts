@@ -15,4 +15,8 @@ export class ProductosService {
     return this.http.get(this.URL + `/obtenerProductosPorEmpresa/${nombreEmpresa}`, {});
   }
 
+  obtenerProductosPorId(idProducto:any):Observable<any> {
+    return this.http.get(this.URL + `/${idProducto}`, {});
+  }
+
 }

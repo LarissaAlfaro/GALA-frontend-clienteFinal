@@ -8,8 +8,22 @@ import { Component, OnInit } from '@angular/core';
 export class EncabezadoComponent implements OnInit {
 
   constructor() { }
+  numeroProductosCarrito: any;
+  productosCarrito: any = [];
+  
 
   ngOnInit(): void {
+    if (localStorage.getItem('productos')==null){
+      this.numeroProductosCarrito = 0;
+    }
+    else {
+      this.productosCarrito = localStorage.getItem('productos');
+      this.productosCarrito = JSON.parse(this.productosCarrito);
+      this.numeroProductosCarrito = this.productosCarrito.length;
+     
+    }
+
+
   }
 
 }

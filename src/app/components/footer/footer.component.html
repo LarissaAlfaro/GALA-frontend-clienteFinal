@@ -1,16 +1,17 @@
 <div class="foot">
     <div class="back-foot vw-100 d-flex" >
-        <div (click)="verAreaCarrito()" class="back-icon rounded-circle">
+        <div (click)="verAreaCarrito()" class="back-icon" [ngClass]="seccionVerCarrito ? 'rounded-circle rounded-circle-pink' : 'rounded-circle'">
             <fa-icon class="icons" [icon]="faCartShopping"></fa-icon>
         </div>
-        <div (click)="verAreaCompras()" class="back-icon rounded-circle">
+        <div (click)="verAreaCompras()" class="back-icon" [ngClass]="seccionAreaCompras ? 'rounded-circle rounded-circle-pink' : 'rounded-circle'">
             <fa-icon class="icons" [icon]="faBagShopping"></fa-icon>
         </div>
-        <div (click)="verAreaPerfil()" class="back-icon rounded-circle">
+        <div (click)="verAreaPerfil()" class="back-icon" [ngClass]="seccionAreaPerfil ? 'rounded-circle rounded-circle-pink' : 'rounded-circle'">
             <fa-icon class="icons" [icon]="faUserLarge"></fa-icon>
         </div>
-        <div #verCategorias (click)="verAreaCategorias()" class="back-icon" [ngClass]="status ? 'rounded-circle rounded-circle-pink' : 'rounded-circle'">
+        <div #verCategorias (click)="verAreaCategorias()" class="back-icon" [ngClass]="seccionCategorias ? 'rounded-circle rounded-circle-pink' : 'rounded-circle'">
             <fa-icon class="icons" [icon]="faHouse"></fa-icon>
         </div>
     </div>
 </div>
+
