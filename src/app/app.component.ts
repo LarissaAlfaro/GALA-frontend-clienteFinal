@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { EncabezadoComponent } from './components/encabezado/encabezado.component';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'Gala-Frontend-Clientes';
+  @ViewChild('encabezado') encabezadoComponent:any=EncabezadoComponent;
   areaVisible = "landing-page";
   categoriaActual: any;
 
@@ -79,5 +81,8 @@ export class AppComponent {
     this.areaVisible = "seccion-perfil";
   }
 
+  actualizarEncabezado(){
+    this.encabezadoComponent.ngOnInit();
+  }
 
 }

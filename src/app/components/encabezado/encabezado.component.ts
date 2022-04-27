@@ -11,10 +11,32 @@ export class EncabezadoComponent implements OnInit {
   constructor(private clienteService:ClientesService) { }
   numeroProductosCarrito: any;
   productosCarrito: any = [];
-  usuarioActual:any;
+  usuarioActual={
+    "_id":"",
+    "nombre":"",
+    "apellido":"",
+    "nacimiento":"",
+    "correo":"",
+    "imagen":"",
+    "contrasenia":"",
+    "direccion":"",
+    "genero":""
+  };;
   
 
   ngOnInit(): void {
+    console.log("Entró");
+    this.clienteService.obtenerUsuarioActual().subscribe(
+      res=>{
+        this.usuarioActual = res;
+        console.log("usuario acutal desde el navbar", this.usuarioActual)
+      },
+      err=>{
+        console.log(err);
+      }
+    )
+
+
     if (localStorage.getItem('productos')==null){
       this.numeroProductosCarrito = 0;
     }
@@ -25,15 +47,7 @@ export class EncabezadoComponent implements OnInit {
     }
 
 
-    this.clienteService.obtenerUsuarioActual().subscribe(
-      res=>{
-        this.usuarioActual = res;
-        console.log("usuario acutal desde el navbar", this.usuarioActual)
-      },
-      err=>{
-        console.log(err);
-      }
-    )
+    
 
 
   }

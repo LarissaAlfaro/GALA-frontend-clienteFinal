@@ -1,23 +1,30 @@
 <app-encabezado></app-encabezado>
 <div class="back-perfil">
     <div class="img-perfil">
-        <span class="nombre-usuario mt-2 mb-2">Fátima Martínez</span>
-        <img class="rounded-circle style-foto" src="../.././assets/images/perfilMujer.jpeg" alt=""> 
+        <span class="nombre-usuario mt-2 mb-2">{{usuarioActual.nombre}} {{usuarioActual.apellido}}</span>
+        <img class="rounded-circle style-foto" [src]="usuarioActual.imagen" alt=""> 
         <label class="upload mt-1" for="upload">
             <span class="glyphicon glyphicon-folder-open text " aria-hidden="true"><fa-icon style="color: #00887A; font-size: larger;" [icon]="faCamera"></fa-icon></span>
-            <input  type="file" id="upload" style="display:none">
+            <form action="/upload-images" method="post" enctype="multipart/form-data">
+                <input style="display:none" (change)="archivoFileChangeEventImagen($event)"  type="file"  class="custom-file-input form-control" name="image"  id="upload"  aria-describedby="inputGroupFileAddon02"> 
+            </form>
         </label>
+        
+        <div *ngIf="subiendoImagen" class="text-center mt-1">
+            <div class="spinner-border" style="color: #77A6F7;" role="status">
+            </div>
+          </div>
     </div>
 </div>
 
 <div class="d-flex mt-4" style="align-items: center; flex-direction: column;">
     <div>
         <fa-icon class="icons" [icon]="faCakeCandles"></fa-icon>
-         <span class="text"> 01 Enero 1990</span>
+         <span class="text  ms-2"> {{usuarioActual.nacimiento.substring(0,10)}}</span>
     </div>
     <div class="mt-2">
         <fa-icon class="icons" [icon]="faEnvelope"></fa-icon>
-         <span class="text"> famartinez@gmail.com</span>
+         <span class="text  ms-2">{{usuarioActual.correo}}</span>
     </div>
 
     <button (click)="abrirModalCerrarSesion(modalCerrarSesion)" type="button" class="btn btn-outline-success mt-4"> <fa-icon class="icons" [icon]="faRightFromBracket"></fa-icon> Cerrar sesión</button>

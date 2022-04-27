@@ -42,4 +42,8 @@ export class ClientesService {
     this.router.navigate(["clientes/inicio-sesion"])
   }
 
+  actualizarUsuario(idUsuario:any, objUsuario:any){
+    return this.http.put<any>(this.URL + `/${idUsuario}`, objUsuario);
+  }
+
 }
