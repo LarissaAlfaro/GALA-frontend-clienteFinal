@@ -13,6 +13,8 @@ import { UrlSegment } from '@angular/router';
 import { DetalleEmpresaComponent } from './components/detalle-empresa/detalle-empresa.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
+import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
+import { PagoComponent } from './components/pago/pago.component';
 
 const nombreCategoriaRegex = '[A-Z,a-z]+'
 const rutaSeccionCategorias = 'clientes/categorias'
@@ -60,6 +62,14 @@ const routes: Routes = [
     component: PerfilComponent
   },
   {
+    path: 'clientes/carrito',
+    component: CarritoComponent
+  },
+  {
+    path: 'clientes/carrito/checkout/ubicacion',
+    component: UbicacionComponent
+  },
+  {
     matcher: regexMatcherCategorias,
     component: EmpresasComponent
   },
@@ -70,11 +80,11 @@ const routes: Routes = [
   {
     matcher: regexMatcherProductosEmpresa,
     component: ProductosComponent
-  },
+  }, 
   {
-    path: 'clientes/carrito',
-    component: CarritoComponent
-  }
+    path: 'clientes/carrito/checkout/pago',
+    component: PagoComponent
+  },
 ];
 
 

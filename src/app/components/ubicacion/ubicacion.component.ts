@@ -1,6 +1,9 @@
 import { Component, AfterViewInit, Output, EventEmitter } from '@angular/core';
 import * as L from 'leaflet';
 import { FormControl, FormGroup, RequiredValidator, Validators} from '@angular/forms';
+import { EncabezadoComponent } from '../encabezado/encabezado.component'
+import { FooterComponent } from '../footer/footer.component';
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-ubicacion',
@@ -89,7 +92,7 @@ export class UbicacionComponent implements AfterViewInit {
     .openPopup();
   }
 
-  constructor() {}
+  constructor(private router:Router) {}
 
   ngAfterViewInit(): void {
     this.initMap();
@@ -97,7 +100,9 @@ export class UbicacionComponent implements AfterViewInit {
 
   verPago(data:any) {
     console.log("Datos de ubicación" , data);
-    this.onVerPago.emit();
+    localStorage.setItem('ubicacion', JSON.stringify(this.datosUbicacion));
+    this.router.navigate([`clientes/carrito/checkout/pago`]);
+
   }
 
   irAtras() {

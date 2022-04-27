@@ -1,29 +1,26 @@
 <app-encabezado></app-encabezado>
-<div class="contenedor-carrito" *ngIf="areaVisible == 'carrito-productos'">
+<div class="contenedor-carrito" *ngIf="areaVisible == 'carrito-productos'" style="height:100%;">
     <div class="container">
-        <div class="row" style="padding-top: 4%;" *ngFor="let producto of productosCarrito"> 
+        <div class="row" style="padding-top: 4%;" *ngFor="let j of productosCarrito;"> 
             <div class="col-3 contenedor-imagenes">
-                <img src="../../../assets/images/image 11.svg" class="imagen-producto-carrito">
+                <img src="{{j.producto.imagen}}" class="imagen-producto-carrito">
             </div>
             <div class="col-9 contenedor-texto">
                 <div class="row">
-                    <p class="textos-carrito nombre-producto">{{producto.nombre}}</p>
-                    <fa-icon class="icons svg-eliminar-producto" [icon]="faXmark"></fa-icon>
+                    <p class="textos-carrito nombre-producto">{{j.producto.nombre}}</p>
+                    <fa-icon class="icons svg-eliminar-producto" [icon]="faXmark" (click)="eliminarProducto(j)"></fa-icon>
                 </div>
                 <div class="row" style="position: relative; bottom: 7%;">
-                    <p class="textos-carrito texto-establecimiento">{{producto.empresa.nombre}}</p>
+                    <p class="textos-carrito texto-establecimiento">{{j.producto.empresa.nombre}}</p>
                 </div>
                 <div class="row" style="position: relative; bottom: 13%;"> 
                     <p class="textos-carrito texto-descripcion">
-                        {{producto.descripcion}}
+                        {{j.producto.descripcion}}
                     </p>
                 </div>
                 <div class="row" style="position: relative; bottom: 20%;">
-                    <fa-icon class="icons signo-menos" [icon]="faCircleMinus"></fa-icon>
-                    <span class="textos-carrito cantidad-producto" style="margin-right: 3%">03</span>
-                    <fa-icon class="icons" [icon]="faCirclePlus"></fa-icon>
-
-                    <span class="textos-carrito precio">Lps. {{producto.precio}}</span>
+                    <span class="textos-carrito cantidad-producto" style="margin-right: 3%">Unidades: {{j.unidades}}</span>
+                    <span class="textos-carrito precio">Lps. {{j.producto.precio}} c/u</span>
                 </div>
             </div>
             <hr class="hr">

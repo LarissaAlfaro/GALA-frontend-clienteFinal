@@ -1,3 +1,4 @@
+<app-encabezado></app-encabezado>
 <div class="componente-pago">
     <div>
         <img class="svg-atras" src="../../../assets/images/atras.svg" (click)="irAtras();">
@@ -41,19 +42,19 @@
             <div class="row">
                 <div class="col individualInputs">
                     <span class="text-inputs">Nombre titular<span style="color: red;">*</span></span>
-                    <input formControlName=" nombreTitular" class="form-control  input-registro" type="text" required placeholder="Escribe..." aria-label="default input example">
+                    <input formControlName="nombreTitular" class="form-control  input-registro" type="text" required placeholder="Escribe..." aria-label="default input example">
                     <span class="row msj-error" *ngIf="nombreTitular?.invalid && (nombreTitular?.dirty || nombreTitular?.touched)">El campo es obligatorio</span>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-12 div-boton" style="margin-top: 20px">
-                    <button type="button" (click)="enviarDatos()" class="btn btn-primary mt-3 mb-2 boton-finalizar">Finalizar</button>
+                    <button required type="submit" class="btn btn-primary mt-3 mb-2 boton-finalizar" (click)="enviarDatos();">Finalizar</button>
                 </div>
             </div>
         </form>
     </div>
-
 </div>
+<app-footer></app-footer>
 
 
