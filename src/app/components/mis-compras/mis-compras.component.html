@@ -1,3 +1,4 @@
+<app-encabezado></app-encabezado>
 <div class="componente-mis-compras container">
     <div class="row" style="padding-right: 15px; padding-left: 15px; padding-top: 20px;">
         <div class="col-12 div-titulo">
@@ -12,85 +13,28 @@
         </div>
 
         <div class="col-6"> 
-            <div class="row">
-                <span class="texto-ver">
-                    Ver:
-                </span>
-            <select class="form-control form-select" style="width:70%" aria-label="Default select example">
-                <option value="1">Todas</option>
-                <option value="2">En camino</option>
-                <option value="3">En el origen</option>
-                <option value="4">En el destino</option>
-            </select>
-            </div>
+    
         </div>
 
         <div class="lista-compras">
-            <div class="card my-cards" (click)="detalleCompra()">
+            <div *ngFor="let orden of ordenesCliente" class="card my-cards" (click)="detalleCompra(orden)">
                 <div class="card-body my-card-body">
                     <div class="row">
-                        <div class="col-6 columnas-cards">
-                            <p class="letras-cards" style="margin-top:8px; margin-left: 15px; ">Transacción 1432</p>
+                        <div class="col-3 columnas-cards" style="align-self:center">
+                            <p class="letras-cards" style=" margin-left: 15px;">Orden No. {{orden.numOrden}}</p>
                         </div>
-                        <div class="col-4 columnas-cards">
-                            <p class="letras-cards" style="margin-top:8px;"> 01/02/2022</p>
+                        <div class="col-5 columnas-cards" style="align-self: center;">
+                            <img class="iconos-estado" src="../../../assets/images/Vector (3).svg">
+                            <span class="letras-cards"> {{(orden.createdAt).substring(0,10)}}</span>
                         </div>
-                        <div class="col-2 columnas-cards">
-                            <img class="iconos-estado" style="margin-top:8px;margin-right: 15px;" src="../../../assets/images/circle-check-solid 1.svg">
+                        <div class="col-4 columnas-cards" style="align-self:center; font-weight: 700; color: #00887A;">
+                            {{orden.estado}}
                         </div> 
                     </div>
-
-                </div>
-            </div>
-            <div class="card my-cards" (click)="detalleCompra()">
-                <div class="card-body my-card-body">
-                    <div class="row">
-                        <div class="col-6 columnas-cards">
-                            <p class="letras-cards" style="margin-top:8px; margin-left: 15px; ">Transacción 1433</p>
-                        </div>
-                        <div class="col-4 columnas-cards">
-                            <p class="letras-cards" style="margin-top:8px;"> 01/02/2022</p>
-                        </div>
-                        <div class="col-2 columnas-cards">
-                            <img class="iconos-estado" style="margin-top:8px;margin-right: 15px;" src="../../../assets/images/circle-check-solid 1.svg">
-                        </div> 
-                    </div>
-
-                </div>
-            </div>
-            <div class="card my-cards" (click)="detalleCompra()">
-                <div class="card-body my-card-body">
-                    <div class="row">
-                        <div class="col-6 columnas-cards">
-                            <p class="letras-cards" style="margin-top:8px; margin-left: 15px; ">Transacción 1434</p>
-                        </div>
-                        <div class="col-4 columnas-cards">
-                            <p class="letras-cards" style="margin-top:8px;"> 01/02/2022</p>
-                        </div>
-                        <div class="col-2 columnas-cards">
-                            <img class="iconos-estado" style="margin-top:8px;margin-right: 15px;" src="../../../assets/images/hourglass-start-solid 1.svg">
-                        </div> 
-                    </div>
-
-                </div>
-            </div>
-            <div class="card my-cards" (click)="detalleCompra()">
-                <div class="card-body my-card-body">
-                    <div class="row">
-                        <div class="col-6 columnas-cards">
-                            <p class="letras-cards" style="margin-top:8px; margin-left: 15px; ">Transacción 1434</p>
-                        </div>
-                        <div class="col-4 columnas-cards">
-                            <p class="letras-cards" style="margin-top:8px;"> 01/02/2022</p>
-                        </div>
-                        <div class="col-2 columnas-cards">
-                            <img class="iconos-estado" style="margin-top:8px;margin-right: 15px;" src="../../../assets/images/arrows-to-dot-solid 1.svg">
-                        </div> 
-                    </div>
-
                 </div>
             </div>
         </div>  
     </div>
 </div>
+<app-footer></app-footer>
 

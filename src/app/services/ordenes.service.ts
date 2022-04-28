@@ -16,6 +16,13 @@ export class OrdenesService {
     return this.http.post(this.URL, cliente);
   }
 
+  obtenerOrdenesPorId(id:any):Observable<any> {
+    return this.http.get(this.URL + `/cliente/${id}`,{});
+  }
+
+  obtenerOrdenPorId(id:any):Observable<any> {
+    return this.http.get(this.URL + `/${id}`,{});
+  }
 
 }
 

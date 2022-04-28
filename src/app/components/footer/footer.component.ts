@@ -43,7 +43,7 @@ export class FooterComponent implements OnInit {
     this.seccionVerCarrito = false;
     this.seccionAreaCompras = true;
     this.seccionAreaPerfil = false; 
-    //this.router.navigate([`/clientes/ordenes`]);
+    this.router.navigate([`/clientes/mis-compras`]);
   }
 
   verAreaCategorias(){

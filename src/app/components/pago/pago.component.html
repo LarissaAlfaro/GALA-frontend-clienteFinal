@@ -49,7 +49,7 @@
 
             <div class="row">
                 <div class="col-12 div-boton" style="margin-top: 20px">
-                    <button required type="submit" class="btn btn-primary mt-3 mb-2 boton-finalizar" (click)="enviarDatos();">Finalizar</button>
+                    <button required type="submit" class="btn btn-primary mt-3 mb-2 boton-finalizar" (click)="enviarDatos(); abrirModal(modalResultadoCompra)">Finalizar</button>
                 </div>
             </div>
         </form>
@@ -58,3 +58,20 @@
 <app-footer></app-footer>
 
 
+
+<ng-template #modalResultadoCompra let-modal>
+    <div class="modal-body">
+        <img class="close-modal" style="margin-left: 90%; height: 25px;
+        width: 25px;" (click)="modal.dismiss('Cross click')" src="../../../assets/images/xmark-solid.svg">
+        <div class="container-fluid">
+            <div class="row" style="text-align:center">
+                <img style="margin:auto" class="" src="../../../assets/images/error_black_24dp 1.svg">
+            </div>
+        </div>
+       
+        <h2 class="titulo-modal">Su compra se ha realizado de manera exitósa.</h2>
+        <div class="contenedor-botones">
+            <button  id="boton-aceptar" (click)="aceptar()" type="button" class="btn btn-primary" >Aceptar</button>
+        </div>
+    </div>
+</ng-template>

@@ -5,6 +5,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { Router } from '@angular/router';
 import { ClientesService } from "../../services/clientes.service"
 import { OrdenesService } from '../../services/ordenes.service'
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 
 
 @Component({
@@ -34,7 +35,8 @@ export class PagoComponent implements OnInit {
 
   constructor(private router:Router,
     private clienteService:ClientesService,
-    private ordenesService: OrdenesService) { }
+    private ordenesService: OrdenesService,
+    private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.clienteService.obtenerUsuarioActual().subscribe(
@@ -49,6 +51,20 @@ export class PagoComponent implements OnInit {
 
   irAtras() {
     this.onAtras.emit();
+  }
+
+  abrirModal(modal:any) {
+    this.modalService.open(
+      modal,
+      {
+        size: 'xl',
+        centered:true
+      }
+    );
+  }
+
+  aceptar() {
+    this.modalService.dismissAll();    
   }
 
   get nombreCompletoTarjeta(){

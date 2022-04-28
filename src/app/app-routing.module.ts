@@ -15,9 +15,12 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 import { PagoComponent } from './components/pago/pago.component';
+import { MisComprasComponent } from './components/mis-compras/mis-compras.component'
+import { DetalleCompraComponent } from './components/detalle-compra/detalle-compra.component'
 
 const nombreCategoriaRegex = '[A-Z,a-z]+'
 const rutaSeccionCategorias = 'clientes/categorias'
+const idOrdenRegex = '[0-9]+'
 
 const regexMatcherCategorias = (url: UrlSegment[]) => {
   return url.length === 3 && url[2].path.match(nombreCategoriaRegex)
@@ -36,7 +39,6 @@ const regexMatcherProductosEmpresa = (url: UrlSegment[]) => {
     ? { consumed: url }
     : null;
 };
-
 
 
 const routes: Routes = [
@@ -70,6 +72,18 @@ const routes: Routes = [
     component: UbicacionComponent
   },
   {
+    path: 'clientes/carrito/checkout/pago',
+    component: PagoComponent
+  },
+  {
+    path:'clientes/mis-compras/detalle-orden',
+    component: DetalleCompraComponent
+  },
+  {
+    path:'clientes/mis-compras',
+    component: MisComprasComponent
+  },
+  {
     matcher: regexMatcherCategorias,
     component: EmpresasComponent
   },
@@ -80,11 +94,7 @@ const routes: Routes = [
   {
     matcher: regexMatcherProductosEmpresa,
     component: ProductosComponent
-  }, 
-  {
-    path: 'clientes/carrito/checkout/pago',
-    component: PagoComponent
-  },
+  }
 ];
 
 

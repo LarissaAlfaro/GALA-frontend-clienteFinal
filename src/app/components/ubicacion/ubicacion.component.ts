@@ -4,6 +4,7 @@ import { FormControl, FormGroup, RequiredValidator, Validators} from '@angular/f
 import { EncabezadoComponent } from '../encabezado/encabezado.component'
 import { FooterComponent } from '../footer/footer.component';
 import {Router} from '@angular/router'
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'app-ubicacion',
@@ -71,6 +72,16 @@ export class UbicacionComponent implements AfterViewInit {
     });
   }
 
+  abrirModal(modal:any) {
+    this.modalService.open(
+      modal,
+      {
+        size: 'xl',
+        centered:true
+      }
+    );
+  }
+
   buscarUbicacion() {
     this.map.panTo(new L.LatLng(this.datosUbicacion.latitud, this.datosUbicacion.longitud));
 
@@ -92,7 +103,9 @@ export class UbicacionComponent implements AfterViewInit {
     .openPopup();
   }
 
-  constructor(private router:Router) {}
+  constructor(private router:Router,
+    private modalService: NgbModal
+    ) {}
 
   ngAfterViewInit(): void {
     this.initMap();

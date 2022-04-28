@@ -6,6 +6,7 @@ import { CategoriasService } from '../../services/categorias.service';
 import { EmpresasService } from '../../services/empresas.service'
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-detalle-empresa',
   templateUrl: './detalle-empresa.component.html',
@@ -25,17 +26,7 @@ export class DetalleEmpresaComponent implements OnInit {
   empresas: any
   categoriaSelect: any;
   empresaSeleccionada: any;
-  objetoEmpresa = {
-    "banner":"",
-    "logo":"",
-    "nombre":"",
-    "calificacion":"",
-    "horaInicio":"",
-    "horaFinal":"",
-    "ubicacion":"",
-    "descripcion":""
-  }
-
+  objetoEmpresa: any;
   estrellasCalificacion: any = [];
   i:any =0;
 
@@ -45,6 +36,7 @@ export class DetalleEmpresaComponent implements OnInit {
     const segments = this.rutaActual.split('/');
     this.categoriaSelect = decodeURI(segments[3])
     this.empresaSeleccionada = decodeURI(segments[5])
+
 
 
     console.log("empresa seleccionada" , this.empresaSeleccionada);

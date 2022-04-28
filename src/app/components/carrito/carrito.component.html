@@ -7,11 +7,11 @@
             </div>
             <div class="col-9 contenedor-texto">
                 <div class="row">
-                    <p class="textos-carrito nombre-producto">{{j.producto.nombre}}</p>
+                    <p class="textos-carrito nombre-producto" style="width: 80%;">{{j.producto.nombre}}</p>
                     <fa-icon class="icons svg-eliminar-producto" [icon]="faXmark" (click)="eliminarProducto(j)"></fa-icon>
                 </div>
                 <div class="row" style="position: relative; bottom: 7%;">
-                    <p class="textos-carrito texto-establecimiento">{{j.producto.empresa.nombre}}</p>
+                    <p class="textos-carrito texto-establecimiento" style="    margin-top: 10px;">{{j.producto.empresa.nombre}}</p>
                 </div>
                 <div class="row" style="position: relative; bottom: 13%;"> 
                     <p class="textos-carrito texto-descripcion">
